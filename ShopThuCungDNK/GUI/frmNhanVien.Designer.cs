@@ -70,7 +70,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 25);
-            this.panelMenu.Size = new System.Drawing.Size(200, 819);
+            this.panelMenu.Size = new System.Drawing.Size(224, 819);
             this.panelMenu.TabIndex = 0;
             // 
             // button6
@@ -87,7 +87,7 @@
             this.button6.Location = new System.Drawing.Point(0, 501);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(200, 58);
+            this.button6.Size = new System.Drawing.Size(224, 58);
             this.button6.TabIndex = 7;
             this.button6.Text = "  Giấy chứng nhận";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,7 +109,7 @@
             this.button5.Location = new System.Drawing.Point(0, 443);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(200, 58);
+            this.button5.Size = new System.Drawing.Size(224, 58);
             this.button5.TabIndex = 6;
             this.button5.Text = "  Thanh toán";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,7 +131,7 @@
             this.button4.Location = new System.Drawing.Point(0, 385);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 58);
+            this.button4.Size = new System.Drawing.Size(224, 58);
             this.button4.TabIndex = 5;
             this.button4.Text = "  Nhà cung cấp";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,7 +153,7 @@
             this.button1.Location = new System.Drawing.Point(0, 327);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 58);
+            this.button1.Size = new System.Drawing.Size(224, 58);
             this.button1.TabIndex = 4;
             this.button1.Text = "  Hóa đơn";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,7 +174,7 @@
             this.btnExit.Location = new System.Drawing.Point(0, 745);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(200, 49);
+            this.btnExit.Size = new System.Drawing.Size(224, 49);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "  Đăng xuất";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -196,7 +196,7 @@
             this.button3.Location = new System.Drawing.Point(0, 269);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(200, 58);
+            this.button3.Size = new System.Drawing.Size(224, 58);
             this.button3.TabIndex = 2;
             this.button3.Text = "  Thú cưng";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,7 +218,7 @@
             this.button2.Location = new System.Drawing.Point(0, 211);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(200, 58);
+            this.button2.Size = new System.Drawing.Size(224, 58);
             this.button2.TabIndex = 1;
             this.button2.Text = "  Khách hàng";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,7 +240,7 @@
             this.btnHome.Location = new System.Drawing.Point(0, 150);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(200, 61);
+            this.btnHome.Size = new System.Drawing.Size(224, 61);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "  Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,7 +256,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 150);
+            this.panel1.Size = new System.Drawing.Size(224, 150);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -266,7 +266,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 107);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel2.Size = new System.Drawing.Size(200, 43);
+            this.panel2.Size = new System.Drawing.Size(224, 43);
             this.panel2.TabIndex = 0;
             // 
             // lb_Name
@@ -276,7 +276,7 @@
             this.lb_Name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Name.ForeColor = System.Drawing.Color.White;
-            this.lb_Name.Location = new System.Drawing.Point(47, 0);
+            this.lb_Name.Location = new System.Drawing.Point(59, 0);
             this.lb_Name.Name = "lb_Name";
             this.lb_Name.Size = new System.Drawing.Size(74, 25);
             this.lb_Name.TabIndex = 0;
@@ -308,10 +308,10 @@
             this.panelTitleBar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(200, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(224, 0);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.panelTitleBar.Size = new System.Drawing.Size(1284, 60);
+            this.panelTitleBar.Size = new System.Drawing.Size(1260, 60);
             this.panelTitleBar.TabIndex = 1;
             // 
             // label1
@@ -330,9 +330,9 @@
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.LavenderBlush;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 60);
+            this.panelDesktop.Location = new System.Drawing.Point(224, 60);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1284, 759);
+            this.panelDesktop.Size = new System.Drawing.Size(1260, 759);
             this.panelDesktop.TabIndex = 2;
             // 
             // frmNhanVien
