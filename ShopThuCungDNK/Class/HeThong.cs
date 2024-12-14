@@ -29,7 +29,7 @@ namespace QuanLySieuThi.Class
         public void TaoXMLFirst()
         {
             // Danh sách các tên bảng cần tạo XML
-            string[] bang = { "NguoiDung", "ChiTietHoaDon", "KhachHang", "HoaDon", "LoaiThuCung", "TinhTrang", "NhaCungCap", "ThuCung", "GiayChungNhan", "Role","DiemDanh" };
+            string[] bang = { "NguoiDung", "ChiTietHoaDon", "KhachHang", "HoaDon", "LoaiThuCung", "TinhTrang", "NhaCungCap", "ThuCung", "GiayChungNhan", "Role", "DiemDanh", "LoaiGiayChungNhan" };
 
             // Kiểm tra và tạo các file XML nếu chúng chưa tồn tại
             foreach (var tenBang in bang)

@@ -44,10 +44,12 @@ namespace ShopThuCungDNK.GUI
             ThongTinDangNhap();
         }
 
+        //trang chủ
         private void btnHome_Click_1(object sender, EventArgs e)
         {
             frmNVTrangChu frmNVTrangChu = new frmNVTrangChu();
             frmNVTrangChu.TopLevel = false;
+            frmNVTrangChu.maNV = maNVMain;
 
             if (panelDesktop.Controls.Count > 0)
             {
@@ -67,6 +69,7 @@ namespace ShopThuCungDNK.GUI
         }
 
 
+        //log out
         private void btnExit_Click(object sender, EventArgs e)
         {
            
@@ -75,6 +78,7 @@ namespace ShopThuCungDNK.GUI
             frmDangNhap.Show();
         }
 
+        //thú cưng
         private void button3_Click(object sender, EventArgs e)
         {
             frmNVThuCung frmNVThuCung = new frmNVThuCung();
@@ -97,6 +101,7 @@ namespace ShopThuCungDNK.GUI
             frmNVThuCung.Show();
         }
 
+        // khách hàng
         private void button2_Click(object sender, EventArgs e)
         {
             frmNVKhachHang frmNVKhachHang = new frmNVKhachHang();
@@ -119,6 +124,7 @@ namespace ShopThuCungDNK.GUI
             frmNVKhachHang.Show();
         }
 
+        //nhà cung cấp
         private void button4_Click(object sender, EventArgs e)
         {
             frmNVNhaCungCap frmNVNhaCungCap = new frmNVNhaCungCap();
@@ -142,6 +148,7 @@ namespace ShopThuCungDNK.GUI
 
         }
 
+        // thanh toán
         private void button5_Click(object sender, EventArgs e)
         {
             frmNVThanhToan frmNVThanhToan = new frmNVThanhToan();
@@ -185,6 +192,28 @@ namespace ShopThuCungDNK.GUI
             frmHoaDon.BringToFront();
 
             frmHoaDon.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        { 
+            frmNVGiayChungNhan frmNVGiayChungNhan = new frmNVGiayChungNhan();
+            frmNVGiayChungNhan.TopLevel = false;
+
+            if (panelDesktop.Controls.Count > 0)
+            {
+                panelDesktop.Controls.Clear();
+            }
+
+            // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
+            frmNVGiayChungNhan.Size = panelDesktop.ClientSize;
+
+
+            panelDesktop.Controls.Add(frmNVGiayChungNhan);
+
+            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+            frmNVGiayChungNhan.BringToFront();
+
+            frmNVGiayChungNhan.Show();
         }
     }
 }

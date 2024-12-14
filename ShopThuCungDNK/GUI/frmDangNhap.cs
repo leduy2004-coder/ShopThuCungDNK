@@ -74,5 +74,10 @@ namespace ShopThuCungDNK.GUI
         {
             Application.Exit();
         }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,27 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_DiemDanh = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ssssss";
-            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(191, 119);
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.btn_DiemDanh);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(206, 182);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(332, 79);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btn_DiemDanh
+            // 
+            this.btn_DiemDanh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_DiemDanh.Location = new System.Drawing.Point(3, 3);
+            this.btn_DiemDanh.Name = "btn_DiemDanh";
+            this.btn_DiemDanh.Size = new System.Drawing.Size(330, 57);
+            this.btn_DiemDanh.TabIndex = 0;
+            this.btn_DiemDanh.Text = "Điểm danh hôm nay!";
+            this.btn_DiemDanh.UseVisualStyleBackColor = true;
+            this.btn_DiemDanh.Click += new System.EventHandler(this.btn_DiemDanh_Click);
             // 
             // frmNVTrangChu
             // 
@@ -60,15 +65,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNVTrangChu";
             this.Text = "frmNVTrangChu";
+            this.Load += new System.EventHandler(this.frmNVTrangChu_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btn_DiemDanh;
     }
 }
