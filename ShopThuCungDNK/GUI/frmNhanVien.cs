@@ -148,5 +148,28 @@ namespace ShopThuCungDNK.GUI
 
             frmNVThanhToan.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frmHoaDon = new frmHoaDon();
+            frmHoaDon.TopLevel = false;
+            frmHoaDon.tenNVMain = tenDNMain;
+
+            if (panelDesktop.Controls.Count > 0)
+            {
+                panelDesktop.Controls.Clear();
+            }
+
+            // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
+            frmHoaDon.Size = panelDesktop.ClientSize;
+
+
+            panelDesktop.Controls.Add(frmHoaDon);
+
+            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+            frmHoaDon.BringToFront();
+
+            frmHoaDon.Show();
+        }
     }
 }

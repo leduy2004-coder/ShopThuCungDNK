@@ -25,27 +25,9 @@ namespace ShopThuCungDNK.Class
             fxml.Them("HoaDon.xml", noiDung);
         }
 
-        public void suaThuCung(string MaThuCung, string Tuoi, string Giong, string GiaTC, string SoLuong, string MaLoai, string MaNhaCungCap, string MaTinhTrang, string HinhAnh)
+        public void xoaHoaDon(string MaHD)
         {
-
-            string noiDung =
-                    "<maTC>" + MaThuCung + "</maTC>" +
-                    "<tuoi>" + Tuoi + "</tuoi>" +
-                    "<giong>" + Giong + "</giong>" +
-                    "<giaTC>" + GiaTC + "</giaTC>" +
-                    "<soLuong>" + SoLuong + "</soLuong>" +
-                    "<maLoai>" + MaLoai + "</maLoai>" +
-                    "<maNhaCungCap>" + MaNhaCungCap + "</maNhaCungCap>" +
-                    "<maTinhTrang>" + MaTinhTrang + "</maTinhTrang>" +
-                    "<hinhAnh>" + HinhAnh + "</hinhAnh>";
-
-
-            fxml.Sua("ThuCung.xml", "ThuCung", "maTC", MaThuCung, noiDung);
-        }
-
-        public void xoaThuCung(string MaThuCung)
-        {
-            fxml.Xoa("ThuCung.xml", "ThuCung", "maTC", MaThuCung);
+            fxml.Xoa("HoaDon.xml", "HoaDon", "maHD", MaHD);
         }
 
         public void themCTHoaDon(string MaTC, string SoLuong, string ThanhTien)
@@ -61,6 +43,10 @@ namespace ShopThuCungDNK.Class
                         "</ChiTietHoaDon>";
 
             fxml.Them("ChiTietHoaDon.xml", noiDung);
+        }
+        public void xoaCTHoaDon(string MaCTHD)
+        {
+            fxml.Xoa("ChiTietHoaDon.xml", "ChiTietHoaDon", "maChiTiet", MaCTHD);
         }
     }
 }
