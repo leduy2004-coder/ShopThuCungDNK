@@ -23,9 +23,10 @@ namespace ShopThuCungDNK.Class
         // Thêm nhân viên
         public void ThemNguoiDung(string maNV, string tenNV, string sdt, string diaChi, string tk, string mk)
         {
+            int ma = Fxml.LayMaxValueFromXml("NguoiDung.xml", "maNV");
             string noiDung =
                 "<NguoiDung>" +
-                "<maNV>" + maNV + "</maNV>" +
+                "<maNV>" + ma + "</maNV>" +
                 "<tenNV>" + tenNV + "</tenNV>" +
                 "<sdt>" + sdt + "</sdt>" +
                 "<diaChi>" + diaChi + "</diaChi>" +

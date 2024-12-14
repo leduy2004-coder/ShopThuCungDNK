@@ -22,7 +22,7 @@ namespace ShopThuCungDNK.GUI
 
         public frmQLLoaiThuCung()
         {
-            
+
             InitializeComponent();
         }
         public void hienthiLoai()
@@ -35,7 +35,7 @@ namespace ShopThuCungDNK.GUI
             // Xóa các cột cũ nếu có
             dataGridView1.Columns.Clear();
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã loài", DataPropertyName = "maLoai", Name = "maLoai", Width = 110 });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên loài", DataPropertyName = "tenLoai", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên loài", DataPropertyName = "tenLoai", Name = "tenLoai", Width = 110 });
 
             originalData = dt.Copy();
 
@@ -49,7 +49,7 @@ namespace ShopThuCungDNK.GUI
         {
             MaLoai = textBox1.Text;
             TenLoai = textBox2.Text;
-           
+
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -57,36 +57,61 @@ namespace ShopThuCungDNK.GUI
             if (l.KiemTra(MaLoai) == true)
             {
                 MessageBox.Show("Mã đã tồn tại");
+                return;
             }
-            else
+            if (TenLoai == null)
             {
-                l.ThemLoai(MaLoai, TenLoai);
-                MessageBox.Show("Ok");
-                hienthiLoai();
-                textBox1.Focus();
+                MessageBox.Show("Vui lòng điền tên loại !!");
+                return;
             }
+            l.ThemLoai(MaLoai, TenLoai);
+            MessageBox.Show("Thêm thành công");
+            hienthiLoai();
+            textBox1.Focus();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             LoadDuLieu();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
 
-            l.SuaLoai(MaLoai, TenLoai);
-            MessageBox.Show("Ok");
-            hienthiLoai();
+                l.SuaLoai(MaLoai, TenLoai);
+                MessageBox.Show("Sửa thành công");
+                hienthiLoai();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để sửa.");
+            }
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            l.XoaLoai(MaLoai);
-            MessageBox.Show("Ok");
-            hienthiLoai();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa loại này?", "Xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    l.XoaLoai(MaLoai);
+                    MessageBox.Show("Xóa thành công");
+                    hienthiLoai();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
+            }
         }
 
         private void frmQLLoaiThuCung_Load(object sender, EventArgs e)
         {
             hienthiLoai();
-            dataGridView1.CellContentClick += new DataGridViewCellEventHandler(dataGridView1_CellContentClick);
+            dataGridView1.CellContentClick += new DataGridViewCellEventHandler(dataGridView1_CellContentClick_1);
 
         }
 
@@ -102,7 +127,7 @@ namespace ShopThuCungDNK.GUI
 
             if (dt != null && dt.Rows.Count > 0)
             {
-                string maLoai= txtTimKiem.Text.Trim();
+                string maLoai = txtTimKiem.Text.Trim();
 
                 // Nếu input rỗng, hiển thị toàn bộ dữ liệu
                 if (string.IsNullOrEmpty(maLoai))
@@ -113,7 +138,7 @@ namespace ShopThuCungDNK.GUI
 
                 // Lọc dữ liệu dựa vào mã thú cưng
                 DataView dv = dt.DefaultView;
-                dv.RowFilter = $"maLoai= '{maLoai}'"; 
+                dv.RowFilter = $"maLoai= '{maLoai}'";
 
                 // Kiểm tra nếu không có kết quả phù hợp
                 if (dv.Count == 0)
@@ -132,41 +157,20 @@ namespace ShopThuCungDNK.GUI
 
             txtTimKiem.Text = "";
             txtTimKiem.Focus();
-
-
-            /* XmlReader reader = XmlReader.Create("LoaiThuCung.xml");
-             DataSet ds = new DataSet();
-             ds.ReadXml(reader);
-             DataView dv = new DataView(ds.Tables[0]);
-             dv.Sort = "maLoai";
-             reader.Close();
-             int index = dv.Find(txtTimKiem.Text);
-             if (index == -1)
-             {
-                 MessageBox.Show("Không tìm thấy");
-                 txtTimKiem.Text = "";
-                 txtTimKiem.Focus();
-
-             }
-             else
-             {
-                 DataTable dt = new DataTable();
-                 dt.Columns.Add("Mã loài");
-                 dt.Columns.Add("Tên loài");
-
-
-                 object[] list = { dv[index]["maLoai"], dv[index]["tenLoai"]};
-                 dt.Rows.Add(list);
-                 dataGridView1.DataSource = dt;
-                 txtTimKiem.Text = "";
-             }*/
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int d = dataGridView1.CurrentRow.Index;
-            textBox1.Text  = dataGridView1.Rows[d].Cells[0].Value?.ToString() ?? string.Empty;
-            textBox2.Text  = dataGridView1.Rows[d].Cells[1].Value?.ToString() ?? string.Empty;
+            if (e.RowIndex >= 0)
+            {
+                // Lấy dòng hiện tại
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                // Gán giá trị từ các cột vào TextBox
+                textBox1.Text = selectedRow.Cells["maLoai"].Value?.ToString();
+                textBox2.Text = selectedRow.Cells["tenLoai"].Value?.ToString();
+ 
+            }
         }
 
     }

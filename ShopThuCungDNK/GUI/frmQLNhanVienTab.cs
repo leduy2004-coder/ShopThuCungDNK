@@ -15,6 +15,21 @@ namespace ShopThuCungDNK.GUI
         public frmQLNhanVienTab()
         {
             InitializeComponent();
+            frmQLNhanVien frmQLNhanVien = new frmQLNhanVien();
+            frmQLNhanVien.TopLevel = false;
+
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.Clear();
+            }
+
+
+            panelMain.Controls.Add(frmQLNhanVien);
+
+            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+            frmQLNhanVien.BringToFront();
+
+            frmQLNhanVien.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

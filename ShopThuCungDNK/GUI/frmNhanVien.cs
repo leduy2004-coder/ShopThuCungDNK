@@ -17,6 +17,21 @@ namespace ShopThuCungDNK.GUI
         public frmNhanVien()
         {
             InitializeComponent();
+            frmNVTrangChu frmNVTrangChu = new frmNVTrangChu();
+            frmNVTrangChu.TopLevel = false;
+
+            if (panelDesktop.Controls.Count > 0)
+            {
+                panelDesktop.Controls.Clear();
+            }
+
+
+            panelDesktop.Controls.Add(frmNVTrangChu);
+
+            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+            frmNVTrangChu.BringToFront();
+
+            frmNVTrangChu.Show();
         }
         public static string tenDNMain = "";
         public static string maNVMain = "";

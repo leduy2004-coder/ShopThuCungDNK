@@ -21,12 +21,27 @@ namespace ShopThuCungDNK.GUI
         public frmQuanLy()
         {
             InitializeComponent();
+            frmQLTrangChu frmQLLoaiThuCung = new frmQLTrangChu();
+            frmQLLoaiThuCung.TopLevel = false;
+
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.Clear();
+            }
+
+
+            panelMain.Controls.Add(frmQLLoaiThuCung);
+
+            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+            frmQLLoaiThuCung.BringToFront();
+
+            frmQLLoaiThuCung.Show();
         }
         void ThongTinDangNhap()
         {
             lb_Name.Text = tenDNMain;
         }
-        
+
 
         private void FrmQuanLy_Load(object sender, EventArgs e)
         {
@@ -65,7 +80,7 @@ namespace ShopThuCungDNK.GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)

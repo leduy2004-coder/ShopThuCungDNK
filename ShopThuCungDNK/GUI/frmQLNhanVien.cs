@@ -53,44 +53,6 @@ namespace ShopThuCungDNK.GUI
             dataGridView1.CellContentClick += new DataGridViewCellEventHandler(dataGridView1_CellContentClick);
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            
-
-            /*XmlReader reader = XmlReader.Create("NguoiDung.xml");
-            DataSet ds = new DataSet();
-            ds.ReadXml(reader);
-            DataView dv = new DataView(ds.Tables[0]);
-            dv.Sort = "maNV";
-            reader.Close();
-            int index = dv.Find(txtTimKiem.Text);
-            if (index == -1)
-            {
-                MessageBox.Show("Không tìm thấy");
-                txtTimKiem.Text = "";
-                txtTimKiem.Focus();
-
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Mã nhân viên");
-                dt.Columns.Add("Họ và tên");
-                dt.Columns.Add("SDT");
-                dt.Columns.Add("Địa chỉ");
-                dt.Columns.Add("Tài khoản");
-                dt.Columns.Add("Mật khẩu");
-                dt.Columns.Add("Mã role");
-
-
-                object[] list = { dv[index]["maNV"], dv[index]["tenNV"], dv[index]["sdt"], dv[index]["diachi"], dv[index]["tk"], dv[index]["mk"], dv[index]["maRole"] };
-                dt.Rows.Add(list);
-                dataGridView1.DataSource = dt;
-                txtTimKiem.Text = "";
-            
-            }*/
-        }
-
         private void btnTimKiem_Click_1(object sender, EventArgs e)
         {
             if (originalData == null || originalData.Rows.Count == 0)
@@ -137,7 +99,6 @@ namespace ShopThuCungDNK.GUI
 
 
         // Load dữ liệu từ các trường nhập liệu vào đối tượng NguoiDung
-        // Load dữ liệu từ các trường nhập liệu vào đối tượng NguoiDung
         public void LoadDuLieu()
         {
             MaNhanVien = textBox6.Text;
@@ -145,7 +106,7 @@ namespace ShopThuCungDNK.GUI
             Sdt = textBox2.Text;
             DiaChi = textBox3.Text;
             tk = textBox4.Text;
-            mk = textBox5.Text; 
+            mk = textBox5.Text;
 
         }
 
@@ -155,27 +116,36 @@ namespace ShopThuCungDNK.GUI
             if (nv.KiemTra(MaNhanVien) == true)
             {
                 MessageBox.Show("Mã khách hàng đã tồn tại");
+                return;
             }
-            else
+            if (TenNhanVien == "" && Sdt == "" && DiaChi == "" && tk == "" && mk == "")
             {
-                nv.ThemNguoiDung(MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk);
-                MessageBox.Show("Ok");
-                hienthiNhanVien();
-                textBox6.Focus();
+                MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu");
+                return;
             }
+
+            nv.ThemNguoiDung(MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk);
+            MessageBox.Show("Ok");
+            hienthiNhanVien();
+            textBox6.Focus();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             LoadDuLieu();
-
-            nv.SuaNguoiDung(MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk);
-            MessageBox.Show("Ok");
-            hienthiNhanVien();
-
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                nv.SuaNguoiDung(MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk);
+                MessageBox.Show("Sửa thành công");
+                hienthiNhanVien();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để sửa.");
+            }
+           
         }
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra nếu có hàng được chọn
@@ -193,9 +163,17 @@ namespace ShopThuCungDNK.GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            nv.XoaNguoiDung(MaNhanVien);
-            MessageBox.Show("Ok");
-            hienthiNhanVien();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                nv.XoaNguoiDung(MaNhanVien);
+                MessageBox.Show("Xóa thành công");
+                hienthiNhanVien();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
+            }
+            
         }
     }
 }

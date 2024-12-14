@@ -23,10 +23,11 @@ namespace ShopThuCungDNK.Class
         }
         public void ThemLoai(string maLoai, string tenLoai)
         {
+            int ma = Fxml.LayMaxValueFromXml("LoaiThuCung.xml", "maLoai");
             // Xây dựng nội dung XML cho một loại thú cưng
             string noiDung =
                 "<LoaiThuCung>" +
-                "<maLoai>" + maLoai + "</maLoai>" +
+                "<maLoai>" + ma + "</maLoai>" +
                 "<tenLoai>" + tenLoai + "</tenLoai>" +
                 "</LoaiThuCung>";
 
