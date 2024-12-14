@@ -18,6 +18,7 @@ namespace ShopThuCungDNK.GUI
         LoaiThuCung l = new LoaiThuCung();
         FileXml Fxml = new FileXml();
         string MaLoai, TenLoai;
+        private DataTable originalData;
 
         public frmQLLoaiThuCung()
         {
@@ -28,6 +29,16 @@ namespace ShopThuCungDNK.GUI
         {
             DataTable dt = new DataTable();
             dt = Fxml.HienThi("LoaiThuCung.xml");
+            // Cấu hình DataGridView
+            dataGridView1.AutoGenerateColumns = false; // Tắt tự động tạo cột
+
+            // Xóa các cột cũ nếu có
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã loài", DataPropertyName = "maLoai", Name = "maLoai", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên loài", DataPropertyName = "tenLoai", Width = 110 });
+
+            originalData = dt.Copy();
+
             dataGridView1.DataSource = dt;
 
             // Thiết lập chế độ AutoSize cho các cột fill chiều rộng của DataGridView
@@ -81,32 +92,74 @@ namespace ShopThuCungDNK.GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            XmlReader reader = XmlReader.Create("LoaiThuCung.xml");
-            DataSet ds = new DataSet();
-            ds.ReadXml(reader);
-            DataView dv = new DataView(ds.Tables[0]);
-            dv.Sort = "maLoai";
-            reader.Close();
-            int index = dv.Find(txtTimKiem.Text);
-            if (index == -1)
+            if (originalData == null || originalData.Rows.Count == 0)
             {
-                MessageBox.Show("Không tìm thấy");
-                txtTimKiem.Text = "";
-                txtTimKiem.Focus();
+                MessageBox.Show("Không có dữ liệu để tìm kiếm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Lấy dữ liệu từ DataTable hiện tại của DataGridView
+            DataTable dt = (DataTable)dataGridView1.DataSource;
 
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string maLoai= txtTimKiem.Text.Trim();
+
+                // Nếu input rỗng, hiển thị toàn bộ dữ liệu
+                if (string.IsNullOrEmpty(maLoai))
+                {
+                    dataGridView1.DataSource = originalData.Copy();
+                    return;
+                }
+
+                // Lọc dữ liệu dựa vào mã thú cưng
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = $"maLoai= '{maLoai}'"; 
+
+                // Kiểm tra nếu không có kết quả phù hợp
+                if (dv.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng có mã phù hợp.", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Gán dữ liệu đã lọc vào DataGridView
+                dataGridView1.DataSource = dv.ToTable();
             }
             else
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Mã loài");
-                dt.Columns.Add("Tên loài");
-                
-
-                object[] list = { dv[index]["maLoai"], dv[index]["tenLoai"]};
-                dt.Rows.Add(list);
-                dataGridView1.DataSource = dt;
-                txtTimKiem.Text = "";
+                MessageBox.Show("Không có dữ liệu để tìm kiếm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            txtTimKiem.Text = "";
+            txtTimKiem.Focus();
+
+
+            /* XmlReader reader = XmlReader.Create("LoaiThuCung.xml");
+             DataSet ds = new DataSet();
+             ds.ReadXml(reader);
+             DataView dv = new DataView(ds.Tables[0]);
+             dv.Sort = "maLoai";
+             reader.Close();
+             int index = dv.Find(txtTimKiem.Text);
+             if (index == -1)
+             {
+                 MessageBox.Show("Không tìm thấy");
+                 txtTimKiem.Text = "";
+                 txtTimKiem.Focus();
+
+             }
+             else
+             {
+                 DataTable dt = new DataTable();
+                 dt.Columns.Add("Mã loài");
+                 dt.Columns.Add("Tên loài");
+
+
+                 object[] list = { dv[index]["maLoai"], dv[index]["tenLoai"]};
+                 dt.Rows.Add(list);
+                 dataGridView1.DataSource = dt;
+                 txtTimKiem.Text = "";
+             }*/
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

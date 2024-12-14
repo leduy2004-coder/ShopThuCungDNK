@@ -17,7 +17,7 @@ namespace ShopThuCungDNK.GUI
     public partial class frmDiemDanh : Form
     {
         FileXml Fxml = new FileXml();
-        
+        private DataTable originalData;
         public frmDiemDanh()
         {
            
@@ -27,6 +27,13 @@ namespace ShopThuCungDNK.GUI
         {
             DataTable dt = new DataTable();
             dt = Fxml.HienThi("DiemDanh.xml");
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã điểm danh", DataPropertyName = "maDiemDanh", Name = "maDiemDanh", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã nhân viên", DataPropertyName = "maNV", Name = "maNV", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Ngày điểm danh", DataPropertyName = "ngayDiemDanh", Width = 110 });
+
+            originalData = dt.Copy();
+
             dataGridView1.DataSource = dt;
 
             // Thiết lập chế độ AutoSize cho các cột fill chiều rộng của DataGridView

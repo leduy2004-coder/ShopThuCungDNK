@@ -35,7 +35,7 @@ namespace ShopThuCungDNK.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmNhanVienTab frmQLNhanVien = new frmNhanVienTab();
+            frmQLNhanVienTab frmQLNhanVien = new frmQLNhanVienTab();
             frmQLNhanVien.TopLevel = false;
 
             if (panelMain.Controls.Count > 0)
@@ -65,7 +65,12 @@ namespace ShopThuCungDNK.GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmQLLoaiThuCung frmQLLoaiThuCung = new frmQLLoaiThuCung();
+            
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            frmQLTrangChu frmQLLoaiThuCung = new frmQLTrangChu();
             frmQLLoaiThuCung.TopLevel = false;
 
             if (panelMain.Controls.Count > 0)
@@ -85,9 +90,9 @@ namespace ShopThuCungDNK.GUI
             frmQLLoaiThuCung.Show();
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
-            frmQLTrangChu frmQLLoaiThuCung = new frmQLTrangChu();
+            frmQLLoaiThuCung frmQLLoaiThuCung = new frmQLLoaiThuCung();
             frmQLLoaiThuCung.TopLevel = false;
 
             if (panelMain.Controls.Count > 0)

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ShopThuCungDNK.GUI
 {
-    public partial class frmNhanVienTab : Form
+    public partial class frmQLNhanVienTab : Form
     {
-        public frmNhanVienTab()
+        public frmQLNhanVienTab()
         {
             InitializeComponent();
         }
