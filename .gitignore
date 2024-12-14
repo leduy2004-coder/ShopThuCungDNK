@@ -1,0 +1,38 @@
+﻿# Visual Studio
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]istros/
+[Dd]ebug/|
+[Dd]ebug/
+bin/
+obj/
+
+# User-specific files
+*.swp
+*.swo
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Tệp cache NuGet
+packages/
+
+# Tệp tạm của Windows
+Thumbs.db
+Desktop.ini
+
+# Các tệp cấu hình hệ thống
+*.log
