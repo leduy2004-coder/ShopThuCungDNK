@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,13 +62,14 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.count2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lb2);
-            this.panel1.Location = new System.Drawing.Point(633, 107);
+            this.panel1.Location = new System.Drawing.Point(697, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 79);
+            this.panel1.Size = new System.Drawing.Size(214, 79);
             this.panel1.TabIndex = 4;
             // 
             // count2
@@ -82,9 +84,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 48);
             this.pictureBox1.TabIndex = 6;
@@ -93,20 +94,21 @@
             // lb2
             // 
             this.lb2.AutoSize = true;
-            this.lb2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.lb2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb2.Location = new System.Drawing.Point(93, 25);
             this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(47, 25);
+            this.lb2.Size = new System.Drawing.Size(44, 25);
             this.lb2.TabIndex = 5;
-            this.lb2.Text = "Dog";
+            this.lb2.Text = "Chó";
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.BackColor = System.Drawing.Color.Plum;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.count1);
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.lb1);
-            this.panel2.Location = new System.Drawing.Point(90, 107);
+            this.panel2.Location = new System.Drawing.Point(213, 89);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 79);
             this.panel2.TabIndex = 7;
@@ -123,9 +125,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(20, 14);
+            this.pictureBox2.Location = new System.Drawing.Point(20, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 48);
             this.pictureBox2.TabIndex = 6;
@@ -134,20 +135,21 @@
             // lb1
             // 
             this.lb1.AutoSize = true;
-            this.lb1.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.lb1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb1.Location = new System.Drawing.Point(93, 25);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(38, 25);
+            this.lb1.Size = new System.Drawing.Size(50, 25);
             this.lb1.TabIndex = 5;
-            this.lb1.Text = "Cat";
+            this.lb1.Text = "Mèo";
             // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.count3);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.lb3);
-            this.panel3.Location = new System.Drawing.Point(90, 399);
+            this.panel3.Location = new System.Drawing.Point(213, 385);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 79);
             this.panel3.TabIndex = 8;
@@ -164,7 +166,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(20, 14);
             this.pictureBox3.Name = "pictureBox3";
@@ -175,22 +176,23 @@
             // lb3
             // 
             this.lb3.AutoSize = true;
-            this.lb3.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.lb3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb3.Location = new System.Drawing.Point(93, 25);
             this.lb3.Name = "lb3";
-            this.lb3.Size = new System.Drawing.Size(53, 25);
+            this.lb3.Size = new System.Drawing.Size(43, 25);
             this.lb3.TabIndex = 5;
-            this.lb3.Text = "Rabit";
+            this.lb3.Text = "Thỏ";
             // 
             // panel4
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.count4);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.lb4);
-            this.panel4.Location = new System.Drawing.Point(633, 399);
+            this.panel4.Location = new System.Drawing.Point(697, 385);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 79);
+            this.panel4.Size = new System.Drawing.Size(214, 79);
             this.panel4.TabIndex = 9;
             // 
             // count4
@@ -205,7 +207,6 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(20, 14);
             this.pictureBox4.Name = "pictureBox4";
@@ -216,29 +217,30 @@
             // lb4
             // 
             this.lb4.AutoSize = true;
-            this.lb4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.lb4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb4.Location = new System.Drawing.Point(93, 25);
             this.lb4.Name = "lb4";
-            this.lb4.Size = new System.Drawing.Size(43, 25);
+            this.lb4.Size = new System.Drawing.Size(54, 25);
             this.lb4.TabIndex = 5;
-            this.lb4.Text = "Bird";
+            this.lb4.Text = "Chim";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(511, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 38);
+            this.label5.Size = new System.Drawing.Size(151, 38);
             this.label5.TabIndex = 135;
-            this.label5.Text = "DOANH THU";
+            this.label5.Text = "Doanh thu";
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pictureBox5.Location = new System.Drawing.Point(260, 157);
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBox5.Location = new System.Drawing.Point(349, 118);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(399, 288);
+            this.pictureBox5.Size = new System.Drawing.Size(413, 329);
             this.pictureBox5.TabIndex = 136;
             this.pictureBox5.TabStop = false;
             // 
@@ -246,22 +248,22 @@
             // 
             this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.circularProgressBar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.InnerColor = System.Drawing.SystemColors.MenuHighlight;
+            this.circularProgressBar1.InnerColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(330, 168);
+            this.circularProgressBar1.Location = new System.Drawing.Point(434, 189);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Name = "circularProgressBar1";
             this.circularProgressBar1.OuterColor = System.Drawing.Color.Gray;
             this.circularProgressBar1.OuterMargin = -25;
             this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.circularProgressBar1.ProgressWidth = 25;
             this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(262, 262);
+            this.circularProgressBar1.Size = new System.Drawing.Size(262, 247);
             this.circularProgressBar1.StartAngle = 270;
             this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -274,12 +276,24 @@
             this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.circularProgressBar1.Value = 68;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.groupBox1.Location = new System.Drawing.Point(20, 20);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1089, 557);
+            this.groupBox1.TabIndex = 139;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tổng quan";
+            // 
             // frmQLTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(956, 565);
+            this.ClientSize = new System.Drawing.Size(1129, 597);
             this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel4);
@@ -287,8 +301,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQLTrangChu";
+            this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "frmQLTrangChu";
             this.Load += new System.EventHandler(this.frmQLTrangChu_Load);
             this.panel1.ResumeLayout(false);
@@ -313,7 +329,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lb2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Panel panel3;
@@ -329,5 +344,7 @@
         private System.Windows.Forms.Label count4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

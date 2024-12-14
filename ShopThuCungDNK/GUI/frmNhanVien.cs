@@ -25,6 +25,7 @@ namespace ShopThuCungDNK.GUI
                 panelDesktop.Controls.Clear();
             }
 
+            frmNVTrangChu.Size = panelDesktop.ClientSize;
 
             panelDesktop.Controls.Add(frmNVTrangChu);
 
