@@ -18,8 +18,8 @@ namespace QuanLySieuThi.Class
     {
 
 
-        string Conn = @"Data Source=DESKTOP-2NFEM03;Initial Catalog=SHOPTHUCUNG;Integrated Security=True;Encrypt=False";
-        //string Conn = @"Data Source=LAPTOP-F30SDEST\SQLEXPRESS;Initial Catalog=SHOPTHUCUNG;Integrated Security=True;Encrypt=False";
+        //string Conn = @"Data Source=DESKTOP-2NFEM03;Initial Catalog=SHOPTHUCUNG;Integrated Security=True;Encrypt=False";
+        string Conn = @"Data Source=LAPTOP-F30SDEST\SQLEXPRESS;Initial Catalog=SHOPTHUCUNG;Integrated Security=True;Encrypt=False";
 
         public DataTable HienThi(string file)
         {
