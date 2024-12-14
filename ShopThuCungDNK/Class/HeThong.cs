@@ -24,12 +24,12 @@ namespace QuanLySieuThi.Class
             Fxml.TaoXML("ThuCung");
             Fxml.TaoXML("GiayChungNhan");
             Fxml.TaoXML("Role");
-
+            Fxml.TaoXML("DiemDanh");
         }
         public void TaoXMLFirst()
         {
             // Danh sách các tên bảng cần tạo XML
-            string[] bang = { "NguoiDung", "ChiTietHoaDon", "KhachHang", "HoaDon", "LoaiThuCung", "TinhTrang", "NhaCungCap", "ThuCung", "GiayChungNhan", "Role" };
+            string[] bang = { "NguoiDung", "ChiTietHoaDon", "KhachHang", "HoaDon", "LoaiThuCung", "TinhTrang", "NhaCungCap", "ThuCung", "GiayChungNhan", "Role","DiemDanh" };
 
             // Kiểm tra và tạo các file XML nếu chúng chưa tồn tại
             foreach (var tenBang in bang)
@@ -80,6 +80,7 @@ namespace QuanLySieuThi.Class
             Fxml.InsertOrUpDateSQL("delete from TinhTrang");
             Fxml.InsertOrUpDateSQL("delete from GiayChungNhan");
             Fxml.InsertOrUpDateSQL("delete from Role");
+            Fxml.InsertOrUpDateSQL("delete from DiemDanh");
 
             //Cập nhập toàn bộ dữ liệu các bảng
             CapNhapTungBang("NguoiDung");
@@ -92,6 +93,7 @@ namespace QuanLySieuThi.Class
             CapNhapTungBang("TinhTrang");
             CapNhapTungBang("GiayChungNhan");
             CapNhapTungBang("Role");
+            CapNhapTungBang("DiemDanh");
         }
     }
 }

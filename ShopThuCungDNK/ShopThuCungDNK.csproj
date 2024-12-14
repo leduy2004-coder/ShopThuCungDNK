@@ -50,9 +50,11 @@
     <Compile Include="Class\FileXml.cs" />
     <Compile Include="Class\HeThong.cs" />
     <Compile Include="Class\KhachHang.cs" />
+    <Compile Include="Class\LoaiThuCung.cs" />
     <Compile Include="Class\Main.cs" />
     <Compile Include="Class\NhaCungCap.cs" />
     <Compile Include="Class\HoaDon.cs" />
+    <Compile Include="Class\NhanVien.cs" />
     <Compile Include="Class\ThuCung.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -84,11 +86,23 @@
     <Compile Include="GUI\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmDiemDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDiemDanh.Designer.cs">
+      <DependentUpon>frmDiemDanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNhanVienTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNhanVienTab.Designer.cs">
+      <DependentUpon>frmNhanVienTab.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmNVKhachHang.cs">
       <SubType>Form</SubType>
@@ -120,11 +134,23 @@
     <Compile Include="GUI\frmNVTrangChu.Designer.cs">
       <DependentUpon>frmNVTrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQLLoaiThuCung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLLoaiThuCung.Designer.cs">
+      <DependentUpon>frmQLLoaiThuCung.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQLTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLTrangChu.Designer.cs">
+      <DependentUpon>frmQLTrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmQuanLy.cs">
       <SubType>Form</SubType>
@@ -149,8 +175,14 @@
     <EmbeddedResource Include="GUI\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDiemDanh.resx">
+      <DependentUpon>frmDiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNhanVienTab.resx">
+      <DependentUpon>frmNhanVienTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNVKhachHang.resx">
       <DependentUpon>frmNVKhachHang.cs</DependentUpon>
@@ -167,8 +199,14 @@
     <EmbeddedResource Include="GUI\frmNVTrangChu.resx">
       <DependentUpon>frmNVTrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLLoaiThuCung.resx">
+      <DependentUpon>frmQLLoaiThuCung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLTrangChu.resx">
+      <DependentUpon>frmQLTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
