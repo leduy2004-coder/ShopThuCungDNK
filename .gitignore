@@ -36,3 +36,4 @@ Desktop.ini
 
 # Các tệp cấu hình hệ thống
 *.log
+/ShopThuCungDNK/Class/ThongKe.cs
