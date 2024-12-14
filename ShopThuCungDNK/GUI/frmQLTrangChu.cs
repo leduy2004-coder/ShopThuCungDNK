@@ -28,7 +28,7 @@ namespace ShopThuCungDNK.GUI
 
         }
         //lay so meo
-        private void LoadSoLuongMeoDaBan()
+        /*private void LoadSoLuongMeoDaBan()
         {
             try
             {
@@ -142,6 +142,54 @@ namespace ShopThuCungDNK.GUI
                 MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        */
+        private int LoadSoLuongDaBan(int maLoai)
+        {
+            int soLuongDaBan = 0;
+
+            try
+            {
+                // Đọc file ThuCung.xml để lấy danh sách maTC của maLoai tương ứng
+                var thuCungDoc = XDocument.Load("ThuCung.xml");
+                var maTCList = thuCungDoc.Descendants("TC")
+                    .Where(tc => (int)tc.Element("maLoai") == maLoai)
+                    .Select(tc => (int)tc.Element("maTC"))
+                    .ToList();
+
+                // Đọc file ChiTietHoaDon.xml để tính tổng số lượng đã bán
+                var chiTietHoaDonDoc = XDocument.Load("ChiTietHoaDon.xml");
+                var chiTietList = chiTietHoaDonDoc.Descendants("ChiTiet")
+                    .Where(ct => maTCList.Contains((int)ct.Element("maTC")))
+                    .Select(ct => new
+                    {
+                        maHD = (int)ct.Element("maHD"),
+                        soLuong = (int)ct.Element("soLuong")
+                    })
+                    .ToList();
+
+                // Kiểm tra trạng thái hóa đơn trong HoaDon.xml
+                var hoaDonDoc = XDocument.Load("HoaDon.xml");
+                foreach (var chiTiet in chiTietList)
+                {
+                    bool isThanhToan = hoaDonDoc.Descendants("HoaDon")
+                        .Any(hd =>
+                            (int)hd.Element("maHD") == chiTiet.maHD &&
+                            (int)hd.Element("trangThai") == 1 // Đã thanh toán
+                        );
+
+                    if (isThanhToan)
+                    {
+                        soLuongDaBan += chiTiet.soLuong;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Có lỗi xảy ra: {ex.Message}");
+            }
+
+            return soLuongDaBan;
+        }
         private void TongDoanhThu()
         {
             try
@@ -164,10 +212,15 @@ namespace ShopThuCungDNK.GUI
 
         private void frmQLTrangChu_Load(object sender, EventArgs e)
         {
-            LoadSoLuongChoDaBan();
-            LoadSoLuongMeoDaBan();
-            LoadSoLuongChimDaBan();
-            LoadSoLuongThoDaBan();
+            /* LoadSoLuongChoDaBan();
+             LoadSoLuongMeoDaBan();
+             LoadSoLuongChimDaBan();
+             LoadSoLuongThoDaBan();*/
+            label6.Text = LoadSoLuongDaBan(2).ToString();
+            label7.Text = LoadSoLuongDaBan(1).ToString();
+            label8.Text = LoadSoLuongDaBan(4).ToString();
+            label9.Text = LoadSoLuongDaBan(3).ToString();
+
             TongDoanhThu();
         }
     }

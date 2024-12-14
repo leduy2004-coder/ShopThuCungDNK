@@ -20,6 +20,7 @@ namespace ShopThuCungDNK.GUI
         NhanVien nv = new NhanVien();
         FileXml Fxml = new FileXml();
         string MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk;
+        private DataTable originalData;
         public frmQLNhanVien()
         {
             InitializeComponent();
@@ -29,6 +30,18 @@ namespace ShopThuCungDNK.GUI
         {
             DataTable dt = new DataTable();
             dt = Fxml.HienThi("NguoiDung.xml");
+            dataGridView1.AutoGenerateColumns = false; // Tắt tự động tạo cột
+
+            // Xóa các cột cũ nếu có
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã nhân viên", DataPropertyName = "maNV", Name = "maLoai", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Họ tên", DataPropertyName = "tenNV", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Số điện thoại", DataPropertyName = "sdt", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Địa chỉ", DataPropertyName = "diaChi", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tài khoản", DataPropertyName = "tk", Width = 110 });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mật khẩu", DataPropertyName = "mk", Width = 110 });
+            originalData = dt.Copy();
+
             dataGridView1.DataSource = dt;
 
             // Thiết lập chế độ AutoSize cho các cột fill chiều rộng của DataGridView
@@ -42,7 +55,9 @@ namespace ShopThuCungDNK.GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            XmlReader reader = XmlReader.Create("NguoiDung.xml");
+            
+
+            /*XmlReader reader = XmlReader.Create("NguoiDung.xml");
             DataSet ds = new DataSet();
             ds.ReadXml(reader);
             DataView dv = new DataView(ds.Tables[0]);
@@ -72,8 +87,54 @@ namespace ShopThuCungDNK.GUI
                 dt.Rows.Add(list);
                 dataGridView1.DataSource = dt;
                 txtTimKiem.Text = "";
-            }
+            
+            }*/
         }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+            if (originalData == null || originalData.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để tìm kiếm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Lấy dữ liệu từ DataTable hiện tại của DataGridView
+            DataTable dt = (DataTable)dataGridView1.DataSource;
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string maNV = txtTimKiem.Text.Trim();
+
+                // Nếu input rỗng, hiển thị toàn bộ dữ liệu
+                if (string.IsNullOrEmpty(maNV))
+                {
+                    dataGridView1.DataSource = originalData.Copy();
+                    return;
+                }
+
+                // Lọc dữ liệu dựa vào mã thú cưng
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = $"maNV= '{maNV}'";
+
+                // Kiểm tra nếu không có kết quả phù hợp
+                if (dv.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng có mã phù hợp.", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Gán dữ liệu đã lọc vào DataGridView
+                dataGridView1.DataSource = dv.ToTable();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để tìm kiếm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            txtTimKiem.Text = "";
+            txtTimKiem.Focus();
+        }
+
 
         // Load dữ liệu từ các trường nhập liệu vào đối tượng NguoiDung
         // Load dữ liệu từ các trường nhập liệu vào đối tượng NguoiDung
@@ -84,7 +145,7 @@ namespace ShopThuCungDNK.GUI
             Sdt = textBox2.Text;
             DiaChi = textBox3.Text;
             tk = textBox4.Text;
-            mk = textBox5.Text;
+            mk = textBox5.Text; 
 
         }
 

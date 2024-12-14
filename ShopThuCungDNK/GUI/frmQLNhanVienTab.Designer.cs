@@ -1,6 +1,6 @@
 ﻿namespace ShopThuCungDNK.GUI
 {
-    partial class frmNhanVienTab
+    partial class frmQLNhanVienTab
     {
         /// <summary>
         /// Required designer variable.
