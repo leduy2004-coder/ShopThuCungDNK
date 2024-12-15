@@ -23,21 +23,8 @@ namespace ShopThuCungDNK.GUI
         public frmQuanLy()
         {
             InitializeComponent();
-            frmQLTrangChu frmQLLoaiThuCung = new frmQLTrangChu();
-            frmQLLoaiThuCung.TopLevel = false;
+            HienThiTrangChu();
 
-            if (panelMain.Controls.Count > 0)
-            {
-                panelMain.Controls.Clear();
-            }
-
-
-            panelMain.Controls.Add(frmQLLoaiThuCung);
-
-            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
-            frmQLLoaiThuCung.BringToFront();
-
-            frmQLLoaiThuCung.Show();
         }
         void ThongTinDangNhap()
         {
@@ -54,6 +41,8 @@ namespace ShopThuCungDNK.GUI
                 btn_Loai.Visible = false;
                 btn_NV.Visible = false;
                 btn_nhaCc.Visible = false;
+
+                lbTitle.Text = "HỆ THỐNG QUẢN LÝ SHOP THÚ CƯNG - NHÂN VIÊN";
             }
         }
 
@@ -89,26 +78,54 @@ namespace ShopThuCungDNK.GUI
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            frmQLTrangChu frmQLLoaiThuCung = new frmQLTrangChu();
-            frmQLLoaiThuCung.TopLevel = false;
 
-            if (panelMain.Controls.Count > 0)
-            {
-                panelMain.Controls.Clear();
-            }
-
-            // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
-            frmQLLoaiThuCung.Size = panelMain.ClientSize;
-
-
-            panelMain.Controls.Add(frmQLLoaiThuCung);
-
-            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
-            frmQLLoaiThuCung.BringToFront();
-
-            frmQLLoaiThuCung.Show();
+            HienThiTrangChu();
         }
+        private void HienThiTrangChu()
+        {
+            if (role.Equals("2"))
+            {
+                frmNVDiemDanh frmNVDiemDanh = new frmNVDiemDanh();
+                frmNVDiemDanh.TopLevel = false;
+                frmNVDiemDanh.maNV = maNVMain;
+                if (panelMain.Controls.Count > 0)
+                {
+                    panelMain.Controls.Clear();
+                }
 
+                // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
+                frmNVDiemDanh.Size = panelMain.ClientSize;
+
+
+                panelMain.Controls.Add(frmNVDiemDanh);
+
+                // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+                frmNVDiemDanh.BringToFront();
+
+                frmNVDiemDanh.Show();
+            }
+            else
+            {
+                frmQLTrangChu frmQLLoaiThuCung = new frmQLTrangChu();
+                frmQLLoaiThuCung.TopLevel = false;
+
+                if (panelMain.Controls.Count > 0)
+                {
+                    panelMain.Controls.Clear();
+                }
+
+                // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
+                frmQLLoaiThuCung.Size = panelMain.ClientSize;
+
+
+                panelMain.Controls.Add(frmQLLoaiThuCung);
+
+                // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+                frmQLLoaiThuCung.BringToFront();
+
+                frmQLLoaiThuCung.Show();
+            }
+        }
         private void button3_Click_1(object sender, EventArgs e)
         {
             frmQLLoaiThuCung frmQLLoaiThuCung = new frmQLLoaiThuCung();
@@ -131,28 +148,7 @@ namespace ShopThuCungDNK.GUI
             frmQLLoaiThuCung.Show();
         }
 
- 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            frmQLThongKe frmQLThongKe = new frmQLThongKe();
-            frmQLThongKe.TopLevel = false;
 
-            if (panelMain.Controls.Count > 0)
-            {
-                panelMain.Controls.Clear();
-            }
-
-            // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
-            frmQLThongKe.Size = panelMain.ClientSize;
-
-
-            panelMain.Controls.Add(frmQLThongKe);
-
-            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
-            frmQLThongKe.BringToFront();
-
-            frmQLThongKe.Show();
-        }
 
         private void btn_Kh_Click(object sender, EventArgs e)
         {
@@ -203,6 +199,7 @@ namespace ShopThuCungDNK.GUI
             frmHoaDon frmHoaDon = new frmHoaDon();
             frmHoaDon.TopLevel = false;
             frmHoaDon.tenNVMain = tenDNMain;
+            frmHoaDon.role = role;
 
             if (panelMain.Controls.Count > 0)
             {
@@ -317,31 +314,32 @@ namespace ShopThuCungDNK.GUI
             frmQLLoaiThuCung.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void frmNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            Application.Exit();
+
+        }
+        private void btn_thongKe_Click(object sender, EventArgs e)
         {
             frmQLThongKe frmQLThongKe = new frmQLThongKe();
             frmQLThongKe.TopLevel = false;
 
-        private void btn_DiemDanh_Click(object sender, EventArgs e)
-        {
-            frmNVDiemDanh frmNVDiemDanh = new frmNVDiemDanh();
-            frmNVDiemDanh.TopLevel = false;
-            frmNVDiemDanh.maNV = maNVMain;
             if (panelMain.Controls.Count > 0)
             {
                 panelMain.Controls.Clear();
             }
 
             // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
-            frmNVDiemDanh.Size = panelMain.ClientSize;
+            frmQLThongKe.Size = panelMain.ClientSize;
 
 
-            panelMain.Controls.Add(frmNVDiemDanh);
+            panelMain.Controls.Add(frmQLThongKe);
 
             // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
-            frmNVDiemDanh.BringToFront();
+            frmQLThongKe.BringToFront();
 
-            frmNVDiemDanh.Show();
+            frmQLThongKe.Show();
         }
     }
 }

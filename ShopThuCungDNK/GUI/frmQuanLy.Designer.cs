@@ -34,11 +34,8 @@ namespace ShopThuCungDNK.GUI
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btn_ChuyenDoi = new System.Windows.Forms.Button();
             this.btn_giayChungNhan = new System.Windows.Forms.Button();
@@ -74,7 +71,7 @@ namespace ShopThuCungDNK.GUI
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(224, 0);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1126, 759);
+            this.panelDesktop.Size = new System.Drawing.Size(1293, 851);
             this.panelDesktop.TabIndex = 5;
             // 
             // panelMain
@@ -82,39 +79,36 @@ namespace ShopThuCungDNK.GUI
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 60);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1126, 699);
+            this.panelMain.Size = new System.Drawing.Size(1293, 791);
             this.panelMain.TabIndex = 5;
             // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelTitleBar.Controls.Add(this.label1);
+            this.panelTitleBar.Controls.Add(this.lbTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.panelTitleBar.Size = new System.Drawing.Size(1126, 60);
+            this.panelTitleBar.Size = new System.Drawing.Size(1293, 60);
             this.panelTitleBar.TabIndex = 4;
             // 
-            // label1
+            // lbTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Imprint MT Shadow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Purple;
-            this.label1.Location = new System.Drawing.Point(30, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(809, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HỆ THỐNG QUẢN LÝ SHOP THÚ CƯNG - QUẢN LÝ";
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTitle.Font = new System.Drawing.Font("Imprint MT Shadow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.Purple;
+            this.lbTitle.Location = new System.Drawing.Point(30, 10);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(809, 35);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "HỆ THỐNG QUẢN LÝ SHOP THÚ CƯNG - QUẢN LÝ";
             // 
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.DarkMagenta;
-            this.panelMenu.Controls.Add(this.button4);
-            this.panelMenu.Controls.Add(this.button1);
-            this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.btnExit);
             this.panelMenu.Controls.Add(this.btn_ChuyenDoi);
             this.panelMenu.Controls.Add(this.btn_giayChungNhan);
@@ -132,73 +126,8 @@ namespace ShopThuCungDNK.GUI
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 25);
-            this.panelMenu.Size = new System.Drawing.Size(224, 759);
+            this.panelMenu.Size = new System.Drawing.Size(224, 851);
             this.panelMenu.TabIndex = 3;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 385);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 58);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "  Thống kê";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 327);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 58);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "  Chuyển đổi ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 269);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(200, 58);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "  Loài";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // btnExit
             // 
@@ -214,7 +143,7 @@ namespace ShopThuCungDNK.GUI
             this.btnExit.Location = new System.Drawing.Point(0, 791);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(203, 49);
+            this.btnExit.Size = new System.Drawing.Size(224, 49);
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "  Đăng xuất";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,7 +164,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_ChuyenDoi.Location = new System.Drawing.Point(0, 733);
             this.btn_ChuyenDoi.Name = "btn_ChuyenDoi";
             this.btn_ChuyenDoi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_ChuyenDoi.Size = new System.Drawing.Size(203, 58);
+            this.btn_ChuyenDoi.Size = new System.Drawing.Size(224, 58);
             this.btn_ChuyenDoi.TabIndex = 14;
             this.btn_ChuyenDoi.Text = "  Chuyển đổi ";
             this.btn_ChuyenDoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,7 +186,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_giayChungNhan.Location = new System.Drawing.Point(0, 675);
             this.btn_giayChungNhan.Name = "btn_giayChungNhan";
             this.btn_giayChungNhan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_giayChungNhan.Size = new System.Drawing.Size(203, 58);
+            this.btn_giayChungNhan.Size = new System.Drawing.Size(224, 58);
             this.btn_giayChungNhan.TabIndex = 13;
             this.btn_giayChungNhan.Text = "  Giấy chứng nhận";
             this.btn_giayChungNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,7 +208,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_thanhToan.Location = new System.Drawing.Point(0, 617);
             this.btn_thanhToan.Name = "btn_thanhToan";
             this.btn_thanhToan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_thanhToan.Size = new System.Drawing.Size(203, 58);
+            this.btn_thanhToan.Size = new System.Drawing.Size(224, 58);
             this.btn_thanhToan.TabIndex = 12;
             this.btn_thanhToan.Text = "  Thanh toán";
             this.btn_thanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -301,7 +230,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_nhaCc.Location = new System.Drawing.Point(0, 559);
             this.btn_nhaCc.Name = "btn_nhaCc";
             this.btn_nhaCc.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_nhaCc.Size = new System.Drawing.Size(203, 58);
+            this.btn_nhaCc.Size = new System.Drawing.Size(224, 58);
             this.btn_nhaCc.TabIndex = 11;
             this.btn_nhaCc.Text = "  Nhà cung cấp";
             this.btn_nhaCc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,7 +252,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_hoaDon.Location = new System.Drawing.Point(0, 501);
             this.btn_hoaDon.Name = "btn_hoaDon";
             this.btn_hoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_hoaDon.Size = new System.Drawing.Size(203, 58);
+            this.btn_hoaDon.Size = new System.Drawing.Size(224, 58);
             this.btn_hoaDon.TabIndex = 10;
             this.btn_hoaDon.Text = "  Hóa đơn";
             this.btn_hoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +274,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_thuCung.Location = new System.Drawing.Point(0, 443);
             this.btn_thuCung.Name = "btn_thuCung";
             this.btn_thuCung.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_thuCung.Size = new System.Drawing.Size(203, 58);
+            this.btn_thuCung.Size = new System.Drawing.Size(224, 58);
             this.btn_thuCung.TabIndex = 9;
             this.btn_thuCung.Text = "  Thú cưng";
             this.btn_thuCung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -367,7 +296,7 @@ namespace ShopThuCungDNK.GUI
             this.btn_Kh.Location = new System.Drawing.Point(0, 385);
             this.btn_Kh.Name = "btn_Kh";
             this.btn_Kh.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_Kh.Size = new System.Drawing.Size(203, 58);
+            this.btn_Kh.Size = new System.Drawing.Size(224, 58);
             this.btn_Kh.TabIndex = 8;
             this.btn_Kh.Text = "  Khách hàng";
             this.btn_Kh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,13 +318,13 @@ namespace ShopThuCungDNK.GUI
             this.btn_thongKe.Location = new System.Drawing.Point(0, 327);
             this.btn_thongKe.Name = "btn_thongKe";
             this.btn_thongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_thongKe.Size = new System.Drawing.Size(203, 58);
+            this.btn_thongKe.Size = new System.Drawing.Size(224, 58);
             this.btn_thongKe.TabIndex = 5;
             this.btn_thongKe.Text = "  Thống kê";
             this.btn_thongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_thongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_thongKe.UseVisualStyleBackColor = false;
-            this.btn_thongKe.Click += new System.EventHandler(this.button4_Click);
+            this.btn_thongKe.Click += new System.EventHandler(this.btn_thongKe_Click);
             // 
             // btn_Loai
             // 
@@ -406,11 +335,12 @@ namespace ShopThuCungDNK.GUI
             this.btn_Loai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Loai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Loai.ForeColor = System.Drawing.Color.White;
+            this.btn_Loai.Image = ((System.Drawing.Image)(resources.GetObject("btn_Loai.Image")));
             this.btn_Loai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Loai.Location = new System.Drawing.Point(0, 269);
             this.btn_Loai.Name = "btn_Loai";
             this.btn_Loai.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_Loai.Size = new System.Drawing.Size(203, 58);
+            this.btn_Loai.Size = new System.Drawing.Size(224, 58);
             this.btn_Loai.TabIndex = 4;
             this.btn_Loai.Text = "  Loài";
             this.btn_Loai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -427,11 +357,12 @@ namespace ShopThuCungDNK.GUI
             this.btn_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NV.ForeColor = System.Drawing.Color.White;
+            this.btn_NV.Image = ((System.Drawing.Image)(resources.GetObject("btn_NV.Image")));
             this.btn_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NV.Location = new System.Drawing.Point(0, 211);
             this.btn_NV.Name = "btn_NV";
             this.btn_NV.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_NV.Size = new System.Drawing.Size(203, 58);
+            this.btn_NV.Size = new System.Drawing.Size(224, 58);
             this.btn_NV.TabIndex = 1;
             this.btn_NV.Text = "  Nhân viên";
             this.btn_NV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,7 +384,7 @@ namespace ShopThuCungDNK.GUI
             this.btnHome.Location = new System.Drawing.Point(0, 150);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(203, 61);
+            this.btnHome.Size = new System.Drawing.Size(224, 61);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "  Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -469,7 +400,7 @@ namespace ShopThuCungDNK.GUI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 150);
+            this.panel1.Size = new System.Drawing.Size(224, 150);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -489,7 +420,7 @@ namespace ShopThuCungDNK.GUI
             this.panel2.Location = new System.Drawing.Point(0, 107);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel2.Size = new System.Drawing.Size(203, 43);
+            this.panel2.Size = new System.Drawing.Size(224, 43);
             this.panel2.TabIndex = 0;
             // 
             // lb_Name
@@ -537,13 +468,12 @@ namespace ShopThuCungDNK.GUI
             this.btn_DiemDanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_DiemDanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_DiemDanh.UseVisualStyleBackColor = false;
-            this.btn_DiemDanh.Click += new System.EventHandler(this.btn_DiemDanh_Click);
             // 
             // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 759);
+            this.ClientSize = new System.Drawing.Size(1517, 851);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelMenu);
             this.Name = "frmQuanLy";
@@ -575,7 +505,7 @@ namespace ShopThuCungDNK.GUI
         private System.Windows.Forms.Label lb_Name;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelTitleBar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btn_Loai;

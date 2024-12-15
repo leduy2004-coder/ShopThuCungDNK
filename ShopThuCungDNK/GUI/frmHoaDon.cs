@@ -17,18 +17,22 @@ namespace ShopThuCungDNK.GUI
     {
         FileXml Fxml = new FileXml();
         public static string tenNVMain = "";
+        public static string role = "";
         private DataTable originalData; // Lưu trữ DataTable gốc
         HoaDon hoaDon = new HoaDon();
         public frmHoaDon()
         {
             InitializeComponent();
+            
         }
-
- 
 
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             HienThiHoaDon();
+            if (role.Equals("2"))
+            {
+                btnRemove.Visible = false;
+            }
         }
 
         public void HienThiHoaDon()
@@ -71,7 +75,7 @@ namespace ShopThuCungDNK.GUI
             // Thêm cột với header tiếng Việt và chỉnh Width
             dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Hóa Đơn", DataPropertyName = "maHD", Name = "maHD", Width = 160 });
             dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Khách Hàng", DataPropertyName = "maKH", Name = "maKH", Width = 160 });
-            dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên Khách Hàng", DataPropertyName = "tenKH", Name = "tenKH", Width = 150 });
+            dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên Khách Hàng", DataPropertyName = "tenKH", Name = "tenKH", Width = 160 });
             dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên NV", DataPropertyName = "tenNV", Name = "tenNV", Width = 150 });
             dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Ngày", DataPropertyName = "ngayChuyenDoi", Name = "ngayChuyenDoi", Width = 170 });
             dgvBill.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tổng Tiền", DataPropertyName = "tongTien", Name = "tongTien", Width = 150 });
@@ -188,9 +192,8 @@ namespace ShopThuCungDNK.GUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRemove_Click(object sender, EventArgs e)
         {
-  
             if (dgvBill.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -228,8 +231,8 @@ namespace ShopThuCungDNK.GUI
                 // Duyệt qua các dòng chi tiết hóa đơn có liên quan
                 foreach (DataRowView rowView in dv)
                 {
-                    DataRow row = rowView.Row; 
-                    string maChiTiet = row["maChiTiet"]?.ToString(); 
+                    DataRow row = rowView.Row;
+                    string maChiTiet = row["maChiTiet"]?.ToString();
                     if (!string.IsNullOrEmpty(maChiTiet))
                     {
                         hoaDon.xoaCTHoaDon(maChiTiet);
@@ -239,6 +242,5 @@ namespace ShopThuCungDNK.GUI
                 MessageBox.Show($"Hóa đơn có mã '{maHoaDon}' đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
     }
 }

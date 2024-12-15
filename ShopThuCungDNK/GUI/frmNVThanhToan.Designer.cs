@@ -95,11 +95,11 @@
             this.panel1.Controls.Add(this.dvgBill);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(526, 5);
+            this.panel1.Location = new System.Drawing.Point(511, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(431, 618);
+            this.panel1.Size = new System.Drawing.Size(453, 618);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox3
@@ -205,7 +205,7 @@
             this.dvgBill.DefaultCellStyle = dataGridViewCellStyle2;
             this.dvgBill.EnableHeadersVisualStyles = false;
             this.dvgBill.GridColor = System.Drawing.Color.LightGray;
-            this.dvgBill.Location = new System.Drawing.Point(3, 59);
+            this.dvgBill.Location = new System.Drawing.Point(9, 59);
             this.dvgBill.MultiSelect = false;
             this.dvgBill.Name = "dvgBill";
             this.dvgBill.ReadOnly = true;
@@ -590,7 +590,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(962, 628);
+            this.ClientSize = new System.Drawing.Size(969, 628);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -247,15 +247,15 @@ namespace ShopThuCungDNK.GUI
                                           .ToList();
 
             // Hiển thị kết quả lên DataGridView hoặc bất kỳ nơi nào bạn muốn
-            dataGridView1.DataSource = finalResult;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTopCus.DataSource = finalResult;
+            dgvTopCus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // Chỉnh sửa màu nền và màu chữ của header
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;  // Màu nền header
-            dataGridView1.Columns["MaKH"].HeaderText = "Mã khách hàng";
-            dataGridView1.Columns["TenKH"].HeaderText = "Tên khách hàng";
-            dataGridView1.Columns["Sdt"].HeaderText = "SĐT";
-            dataGridView1.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dataGridView1.Columns["TongTien"].HeaderText = "Tổng Tiền";
+            dgvTopCus.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;  // Màu nền header
+            dgvTopCus.Columns["MaKH"].HeaderText = "Mã khách hàng";
+            dgvTopCus.Columns["TenKH"].HeaderText = "Tên khách hàng";
+            dgvTopCus.Columns["Sdt"].HeaderText = "SĐT";
+            dgvTopCus.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dgvTopCus.Columns["TongTien"].HeaderText = "Tổng Tiền";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

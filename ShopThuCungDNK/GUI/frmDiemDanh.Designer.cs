@@ -69,7 +69,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Brown;
-            this.label9.Location = new System.Drawing.Point(425, 177);
+            this.label9.Location = new System.Drawing.Point(447, 261);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(210, 31);
             this.label9.TabIndex = 139;
@@ -79,7 +79,7 @@
             // 
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(10, 227);
+            this.panel1.Location = new System.Drawing.Point(10, 344);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1032, 389);
             this.panel1.TabIndex = 140;
@@ -157,7 +157,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(731, 151);
+            this.pictureBox1.Location = new System.Drawing.Point(753, 235);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(79, 70);
             this.pictureBox1.TabIndex = 141;
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(1052, 626);
+            this.ClientSize = new System.Drawing.Size(1052, 743);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
