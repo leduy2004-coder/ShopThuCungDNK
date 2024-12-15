@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace QuanLySieuThi.Class
@@ -75,51 +76,48 @@ namespace QuanLySieuThi.Class
             string duongDan = @"" + tenBang + ".xml";
             DataTable table = Fxml.HienThi(duongDan);
 
-            try
+            // Đặt lại giá trị Identity về 0
+            string sqlReset = $"DBCC CHECKIDENT ('{tenBang}', RESEED, 0);";
+            Fxml.InsertOrUpDateSQL(sqlReset);
+
+            for (int i = 0; i < table.Rows.Count; i++)
             {
-                // Bật IDENTITY_INSERT
-                string sql = $"SET IDENTITY_INSERT {tenBang} ON;";
-                Fxml.InsertOrUpDateSQL(sql);
+                // Xây dựng câu lệnh SQL
+                string sql = "insert into " + tenBang + " (";
 
-                // Lặp qua các dòng và chèn vào bảng
-                for (int i = 0; i < table.Rows.Count; i++)
+                List<SqlParameter> parameters = new List<SqlParameter>();
+
+                // Xây dựng danh sách cột
+                for (int j = 1; j < table.Columns.Count; j++)
                 {
-                    sql = $"INSERT INTO {tenBang} (";
+                    sql += table.Columns[j].ColumnName + ", ";
+                }
+                sql = sql.TrimEnd(',', ' ') + ") values (";
 
-                    // Lặp qua các cột và thêm vào câu lệnh INSERT
-                    for (int j = 0; j < table.Columns.Count; j++)
+                // Thêm các giá trị
+                for (int j = 1; j < table.Columns.Count; j++)
+                {
+                    if (tenBang == "ThuCung" && table.Columns[j].ColumnName == "hinhAnh")
                     {
-                        sql += table.Columns[j].ColumnName + ", ";
+                        // Chuyển đổi hình ảnh từ Base64 sang byte[]
+                        byte[] hinhAnhData = Convert.FromBase64String(table.Rows[i][j].ToString().Trim());
+                        SqlParameter param = new SqlParameter("@hinhAnh" + i, SqlDbType.VarBinary);
+                        param.Value = hinhAnhData;
+                        parameters.Add(param);
+                        sql += "@hinhAnh" + i + ", "; // Tham số
                     }
-
-                    // Xóa dấu ',' thừa cuối câu lệnh
-                    sql = sql.TrimEnd(',', ' ') + ") VALUES(";
-
-                    // Thêm giá trị từ DataTable vào câu lệnh VALUES
-                    for (int j = 0; j < table.Columns.Count; j++)
+                    else
                     {
-                        // Kiểm tra giá trị có thể bị null hay không
-                        var value = table.Rows[i][j].ToString().Trim();
-                        sql += value == string.Empty ? "NULL," : $"N'{value}',";
+                        sql += $"N'{table.Rows[i][j].ToString().Trim().Replace("'", "''")}', ";
                     }
-
-                    // Xóa dấu ',' thừa cuối câu lệnh VALUES
-                    sql = sql.TrimEnd(',') + ");";
-
-                    // Thực thi câu lệnh INSERT
-                    Fxml.InsertOrUpDateSQL(sql);
                 }
 
-                // Tắt IDENTITY_INSERT
-                sql = $"SET IDENTITY_INSERT {tenBang} OFF;";
-                Fxml.InsertOrUpDateSQL(sql);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Lỗi khi chèn dữ liệu vào bảng {tenBang}: {ex.Message}");
+                sql = sql.TrimEnd(',', ' ') + ");";
+
+                // Thực thi câu lệnh SQL với tham số
+                Fxml.InsertOrUpDateSQL(sql, parameters);
             }
         }
-
 
 
 

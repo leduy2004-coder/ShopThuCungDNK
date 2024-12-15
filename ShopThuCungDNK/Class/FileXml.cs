@@ -193,5 +193,25 @@ namespace QuanLySieuThi.Class
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public void InsertOrUpDateSQL(string sql, List<SqlParameter> parameters = null)
+        {
+            using (SqlConnection con = new SqlConnection(Conn))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    // Nếu có tham số thì thêm vào SqlCommand
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters.ToArray());
+                    }
+
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+            }
+        }
+
     }
 }
