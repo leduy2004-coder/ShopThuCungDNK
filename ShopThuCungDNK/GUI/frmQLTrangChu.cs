@@ -25,17 +25,27 @@ namespace ShopThuCungDNK.GUI
             InitializeComponent();
         }
 
-       
+
         private void frmQLTrangChu_Load(object sender, EventArgs e)
         {
+            // Lấy dữ liệu trước
             getData();
-         
-            circularProgressBar1.Maximum = 20000000;
-            circularProgressBar1.Value = Convert.ToInt32(tongTien);
-            circularProgressBar1.BackColor = Color.Transparent;
-            circularProgressBar1.Text = Convert.ToInt32(tongTien).ToString();
 
+            decimal tongTien = 1000000m; // Thay thế bằng giá trị thực tế bạn nhận được từ getData()
+
+            // Đảm bảo giá trị Maximum hợp lý cho progress bar
+            decimal maxLimit = 1000000m; // Chỉnh lại giới hạn nếu cần thiết
+            circularProgressBar1.Maximum = (int)maxLimit;
+
+            // Đảm bảo tongTien không vượt quá Maximum, và kiểu giá trị của Value phải hợp lệ.
+            circularProgressBar1.Value = (int)Math.Min(tongTien, maxLimit);
+
+            circularProgressBar1.BackColor = Color.Transparent;
+
+            // Hiển thị giá trị tongTien, nếu cần phải làm tròn hoặc định dạng, dùng:
+            circularProgressBar1.Text = tongTien.ToString("N0"); // Định dạng số nguyên
         }
+
 
         public void getData()
         {
@@ -85,101 +95,6 @@ namespace ShopThuCungDNK.GUI
                 // Tăng index lên để gán cho label tiếp theo
                 index++;
             }
-        }
-
-        private void lb4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void count2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void count1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void count3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void count4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void circularProgressBar1_Click(object sender, EventArgs e)

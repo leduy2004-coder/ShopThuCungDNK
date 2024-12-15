@@ -89,8 +89,8 @@ namespace QuanLySieuThi.Class
                 List<string> parameterNames = new List<string>();
                 List<SqlParameter> parameters = new List<SqlParameter>();
 
-                // Duyệt qua các cột và thêm tham số
-                for (int j = 1; j < table.Columns.Count; j++)
+                // Duyệt qua các cột bắt đầu từ cột thứ 2 (bỏ qua cột đầu tiên)
+                for (int j = 1; j < table.Columns.Count; j++) // Bắt đầu từ j = 1 để bỏ qua cột đầu tiên
                 {
                     string columnName = table.Columns[j].ColumnName;
                     columnNames.Add(columnName);
@@ -136,6 +136,7 @@ namespace QuanLySieuThi.Class
             input = input.Trim();
             return (input.Length % 4 == 0) && Regex.IsMatch(input, "^[a-zA-Z0-9+/]*={0,2}$");
         }
+
 
         public void CapNhapSQL()
         {

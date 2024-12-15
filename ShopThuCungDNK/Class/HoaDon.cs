@@ -34,6 +34,7 @@ namespace ShopThuCungDNK.Class
         {
             int ma = fxml.LayMaxValueFromXml("ChiTietHoaDon.xml", "maChiTiet");
             int maHD = fxml.LayMaxValueFromXml("HoaDon.xml", "maHD");
+            maHD = maHD - 1;
             string noiDung = "<ChiTietHoaDon>" +
                     "<maChiTiet>" + ma + "</maChiTiet>" +
                     "<maHD>" + maHD + "</maHD>" +

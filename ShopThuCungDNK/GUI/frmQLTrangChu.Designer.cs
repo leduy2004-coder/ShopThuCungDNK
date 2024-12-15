@@ -72,7 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(214, 79);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // count2
             // 
@@ -83,7 +82,6 @@
             this.count2.Size = new System.Drawing.Size(32, 38);
             this.count2.TabIndex = 8;
             this.count2.Text = "0";
-            this.count2.Click += new System.EventHandler(this.count2_Click);
             // 
             // pictureBox2
             // 
@@ -93,7 +91,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(56, 48);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lb2
             // 
@@ -104,7 +101,6 @@
             this.lb2.Size = new System.Drawing.Size(44, 25);
             this.lb2.TabIndex = 5;
             this.lb2.Text = "Chó";
-            this.lb2.Click += new System.EventHandler(this.lb2_Click);
             // 
             // pictureBox1
             // 
@@ -114,7 +110,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(56, 48);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -127,7 +122,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 79);
             this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // count1
             // 
@@ -138,7 +132,6 @@
             this.count1.Size = new System.Drawing.Size(32, 38);
             this.count1.TabIndex = 7;
             this.count1.Text = "0";
-            this.count1.Click += new System.EventHandler(this.count1_Click);
             // 
             // lb1
             // 
@@ -149,7 +142,6 @@
             this.lb1.Size = new System.Drawing.Size(50, 25);
             this.lb1.TabIndex = 5;
             this.lb1.Text = "Mèo";
-            this.lb1.Click += new System.EventHandler(this.lb1_Click);
             // 
             // panel3
             // 
@@ -162,7 +154,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 79);
             this.panel3.TabIndex = 8;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // count3
             // 
@@ -173,7 +164,6 @@
             this.count3.Size = new System.Drawing.Size(32, 38);
             this.count3.TabIndex = 10;
             this.count3.Text = "0";
-            this.count3.Click += new System.EventHandler(this.count3_Click);
             // 
             // pictureBox3
             // 
@@ -183,7 +173,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(56, 48);
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // lb3
             // 
@@ -194,7 +183,6 @@
             this.lb3.Size = new System.Drawing.Size(43, 25);
             this.lb3.TabIndex = 5;
             this.lb3.Text = "Thỏ";
-            this.lb3.Click += new System.EventHandler(this.lb3_Click);
             // 
             // panel4
             // 
@@ -207,7 +195,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(214, 79);
             this.panel4.TabIndex = 9;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // count4
             // 
@@ -218,7 +205,6 @@
             this.count4.Size = new System.Drawing.Size(32, 38);
             this.count4.TabIndex = 9;
             this.count4.Text = "0";
-            this.count4.Click += new System.EventHandler(this.count4_Click);
             // 
             // pictureBox4
             // 
@@ -228,7 +214,6 @@
             this.pictureBox4.Size = new System.Drawing.Size(56, 48);
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // lb4
             // 
@@ -239,7 +224,6 @@
             this.lb4.Size = new System.Drawing.Size(54, 25);
             this.lb4.TabIndex = 5;
             this.lb4.Text = "Chim";
-            this.lb4.Click += new System.EventHandler(this.lb4_Click);
             // 
             // label5
             // 
@@ -251,7 +235,6 @@
             this.label5.Size = new System.Drawing.Size(151, 38);
             this.label5.TabIndex = 135;
             this.label5.Text = "Doanh thu";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox5
             // 
@@ -261,7 +244,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(413, 329);
             this.pictureBox5.TabIndex = 136;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // circularProgressBar1
             // 
@@ -314,7 +296,6 @@
             this.groupBox1.TabIndex = 139;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tổng quan";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // frmQLTrangChu
             // 
