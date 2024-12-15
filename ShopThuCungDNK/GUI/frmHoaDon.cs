@@ -242,5 +242,12 @@ namespace ShopThuCungDNK.GUI
                 MessageBox.Show($"Hóa đơn có mã '{maHoaDon}' đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int i = dgvBill.CurrentRow.Index;
+            string data = dgvBill.Rows[i].Cells[0].Value.ToString();
+            Fxml.TimKiemXSLT(data, "ChiTietHoaDon", "CTHoaDon");
+        }
     }
 }

@@ -137,10 +137,6 @@ namespace QuanLySieuThi.Class
             return (input.Length % 4 == 0) && Regex.IsMatch(input, "^[a-zA-Z0-9+/]*={0,2}$");
         }
 
-
-
-
-
         public void CapNhapSQL()
         {
             //Xóa toàn bộ dữ liệu các bảng

@@ -170,21 +170,34 @@ namespace QuanLySieuThi.Class
         }
         public void TimKiemXSLT(string data, string tenFileXML, string tenfileXSLT)
         {
+            // Lấy đường dẫn thư mục Debug
+            string debugPath = AppDomain.CurrentDomain.BaseDirectory;
 
+            // Đường dẫn file XSLT trong thư mục 'xslt'
+            string xsltPath = Path.Combine(debugPath, "xslt", tenfileXSLT + ".xslt");
+
+            // Đường dẫn file XML và HTML
+            string xmlPath = Path.Combine(debugPath, tenFileXML + ".xml");
+            string htmlPath = Path.Combine(debugPath, tenFileXML + ".html");
+
+            // Load XSLT
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("\\" + tenfileXSLT + ".xslt");
-            // Create the XsltArgumentList.
-            XsltArgumentList argList = new XsltArgumentList();
-            // Calculate the discount date.
-            argList.AddParam("Data", "", data);
-            // Create an XmlWriter to write the output.             
-            XmlWriter writer = XmlWriter.Create("\\" + tenFileXML + ".html");
-            // Transform the file.
-            xslt.Transform(new XPathDocument("\\" + tenFileXML + ".xml"), argList, writer);
-            writer.Close();
-            System.Diagnostics.Process.Start("\\" + tenFileXML + ".html");
+            xslt.Load(xsltPath);
 
+            // Thêm tham số
+            XsltArgumentList argList = new XsltArgumentList();
+            argList.AddParam("Data", "", data);
+
+            // Tạo file HTML kết quả
+            using (XmlWriter writer = XmlWriter.Create(htmlPath))
+            {
+                xslt.Transform(new XPathDocument(xmlPath), argList, writer);
+            }
+
+            // Mở file HTML
+            System.Diagnostics.Process.Start(htmlPath);
         }
+
         public void InsertOrUpDateSQL(string sql)
         {
             SqlConnection con = new SqlConnection(Conn);
