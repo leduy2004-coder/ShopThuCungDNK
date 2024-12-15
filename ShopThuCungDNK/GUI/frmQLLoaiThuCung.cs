@@ -75,7 +75,7 @@ namespace ShopThuCungDNK.GUI
         private void button5_Click(object sender, EventArgs e)
         {
             LoadDuLieu();
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0 && MaLoai != "")
             {
 
                 l.SuaLoai(MaLoai, TenLoai);
@@ -92,7 +92,8 @@ namespace ShopThuCungDNK.GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            LoadDuLieu();
+            if (dataGridView1.SelectedRows.Count > 0 && MaLoai != "")
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 

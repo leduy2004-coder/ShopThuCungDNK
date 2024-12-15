@@ -148,7 +148,7 @@ namespace ShopThuCungDNK.GUI
         private void button5_Click(object sender, EventArgs e)
         {
             LoadDuLieu();
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0 && MaNhanVien != "")
             {
                 nv.SuaNguoiDung(MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk);
                 MessageBox.Show("Sửa thành công");
@@ -177,7 +177,8 @@ namespace ShopThuCungDNK.GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            LoadDuLieu();
+            if (dataGridView1.SelectedRows.Count > 0 && MaNhanVien != "")
             {
                 nv.XoaNguoiDung(MaNhanVien);
                 MessageBox.Show("Xóa thành công");

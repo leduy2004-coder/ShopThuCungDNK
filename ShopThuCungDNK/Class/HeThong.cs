@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 
 namespace QuanLySieuThi.Class
@@ -83,41 +84,59 @@ namespace QuanLySieuThi.Class
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 // Xây dựng câu lệnh SQL
-                string sql = "insert into " + tenBang + " (";
-
+                string sql = $"INSERT INTO {tenBang} (";
+                List<string> columnNames = new List<string>();
+                List<string> parameterNames = new List<string>();
                 List<SqlParameter> parameters = new List<SqlParameter>();
 
-                // Xây dựng danh sách cột
+                // Duyệt qua các cột và thêm tham số
                 for (int j = 1; j < table.Columns.Count; j++)
                 {
-                    sql += table.Columns[j].ColumnName + ", ";
-                }
-                sql = sql.TrimEnd(',', ' ') + ") values (";
+                    string columnName = table.Columns[j].ColumnName;
+                    columnNames.Add(columnName);
 
-                // Thêm các giá trị
-                for (int j = 1; j < table.Columns.Count; j++)
-                {
-                    if (tenBang == "ThuCung" && table.Columns[j].ColumnName == "hinhAnh")
+                    string paramName = $"@{columnName}_{i}";
+                    parameterNames.Add(paramName);
+
+                    // Xử lý đặc biệt cho cột hinhAnh
+                    if (tenBang == "ThuCung" && columnName == "hinhAnh")
                     {
-                        // Chuyển đổi hình ảnh từ Base64 sang byte[]
-                        byte[] hinhAnhData = Convert.FromBase64String(table.Rows[i][j].ToString().Trim());
-                        SqlParameter param = new SqlParameter("@hinhAnh" + i, SqlDbType.VarBinary);
-                        param.Value = hinhAnhData;
+                        string base64String = table.Rows[i][j]?.ToString().Trim();
+                        byte[] hinhAnhData = null;
+
+                        if (!string.IsNullOrEmpty(base64String) && IsBase64String(base64String))
+                        {
+                            hinhAnhData = Convert.FromBase64String(base64String);
+                        }
+
+                        SqlParameter param = new SqlParameter(paramName, SqlDbType.VarBinary);
+                        param.Value = hinhAnhData ?? (object)DBNull.Value; // Gán null nếu không hợp lệ
                         parameters.Add(param);
-                        sql += "@hinhAnh" + i + ", "; // Tham số
                     }
                     else
                     {
-                        sql += $"N'{table.Rows[i][j].ToString().Trim().Replace("'", "''")}', ";
+                        SqlParameter param = new SqlParameter(paramName, SqlDbType.NVarChar);
+                        param.Value = table.Rows[i][j]?.ToString().Trim() ?? (object)DBNull.Value;
+                        parameters.Add(param);
                     }
                 }
 
-                sql = sql.TrimEnd(',', ' ') + ");";
+                // Hoàn thiện câu lệnh SQL
+                sql += string.Join(", ", columnNames) + ") VALUES (" + string.Join(", ", parameterNames) + ");";
 
                 // Thực thi câu lệnh SQL với tham số
                 Fxml.InsertOrUpDateSQL(sql, parameters);
             }
         }
+
+        // Hàm kiểm tra chuỗi có phải Base64 hợp lệ không
+        bool IsBase64String(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return false;
+            input = input.Trim();
+            return (input.Length % 4 == 0) && Regex.IsMatch(input, "^[a-zA-Z0-9+/]*={0,2}$");
+        }
+
 
 
 
