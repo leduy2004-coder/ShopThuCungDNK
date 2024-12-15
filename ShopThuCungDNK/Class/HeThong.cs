@@ -23,6 +23,7 @@ namespace QuanLySieuThi.Class
             Fxml.TaoXML("NhaCungCap");
             Fxml.TaoXML("ThuCung");
             Fxml.TaoXML("GiayChungNhan");
+            Fxml.TaoXML("LoaiGiayChungNhan");
             Fxml.TaoXML("Role");
             Fxml.TaoXML("DiemDanh");
         }
@@ -46,6 +47,25 @@ namespace QuanLySieuThi.Class
                 else
                 {
                     Console.WriteLine($"File XML cho bảng {tenBang} đã tồn tại.");
+                }
+            }
+        }
+        public void XoaHetFileXML()
+        {
+            string[] bang = { "NguoiDung", "ChiTietHoaDon", "KhachHang", "HoaDon", "LoaiThuCung", "TinhTrang", "NhaCungCap", "ThuCung", "GiayChungNhan", "Role", "DiemDanh", "LoaiGiayChungNhan" };
+
+            foreach (var tenBang in bang)
+            {
+                string duongDan = Application.StartupPath + "\\" + tenBang + ".xml";
+
+                if (File.Exists(duongDan))
+                {
+                    File.Delete(duongDan);
+                    Console.WriteLine($"Đã xóa file XML cho bảng: {tenBang}");
+                }
+                else
+                {
+                    Console.WriteLine($"File XML cho bảng {tenBang} không tồn tại.");
                 }
             }
         }
@@ -81,6 +101,7 @@ namespace QuanLySieuThi.Class
             Fxml.InsertOrUpDateSQL("delete from GiayChungNhan");
             Fxml.InsertOrUpDateSQL("delete from Role");
             Fxml.InsertOrUpDateSQL("delete from DiemDanh");
+            Fxml.InsertOrUpDateSQL("delete from LoaiGiayChungNhan");
 
             //Cập nhập toàn bộ dữ liệu các bảng
             CapNhapTungBang("NguoiDung");
@@ -94,6 +115,7 @@ namespace QuanLySieuThi.Class
             CapNhapTungBang("GiayChungNhan");
             CapNhapTungBang("Role");
             CapNhapTungBang("DiemDanh");
+            CapNhapTungBang("LoaiGiayChungNhan");
         }
     }
 }

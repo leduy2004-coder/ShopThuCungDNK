@@ -257,6 +257,11 @@ namespace ShopThuCungDNK.GUI.Dialog
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void HienThiThuCung()
         {
             // Lấy dữ liệu từ file XML
@@ -283,7 +288,7 @@ namespace ShopThuCungDNK.GUI.Dialog
             dgvThuCung.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại", DataPropertyName = "loaiThuCung", Width = 70 });
             dgvThuCung.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tuổi", DataPropertyName = "tuoi", Width = 60 });
             dgvThuCung.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Giống", DataPropertyName = "giong", Name = "giong", Width = 160 });
-            dgvThuCung.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Giá Bán", DataPropertyName = "giaTC", Name = "giaTC", Width = 90 });
+            dgvThuCung.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Giá Bán", DataPropertyName = "giaTC", Name = "giaTC", Width = 100 });
             dgvThuCung.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Số Lượng", DataPropertyName = "soLuong", Name = "soLuong", Width = 80 });
 
             originalData = dt.Copy();

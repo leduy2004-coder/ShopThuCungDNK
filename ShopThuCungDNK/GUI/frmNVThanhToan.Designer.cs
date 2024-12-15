@@ -95,11 +95,11 @@
             this.panel1.Controls.Add(this.dvgBill);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(511, 5);
+            this.panel1.Location = new System.Drawing.Point(526, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(446, 618);
+            this.panel1.Size = new System.Drawing.Size(431, 618);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox3
@@ -213,8 +213,9 @@
             this.dvgBill.RowHeadersWidth = 25;
             this.dvgBill.RowTemplate.DividerHeight = 1;
             this.dvgBill.RowTemplate.Height = 25;
+            this.dvgBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dvgBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgBill.Size = new System.Drawing.Size(438, 398);
+            this.dvgBill.Size = new System.Drawing.Size(434, 398);
             this.dvgBill.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1

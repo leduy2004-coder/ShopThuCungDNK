@@ -125,6 +125,12 @@
     <Compile Include="GUI\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQLChuyenDoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLChuyenDoi.Designer.cs">
+      <DependentUpon>frmQLChuyenDoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQLNhanVienTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\dialogCTHoaDon.resx">
+      <DependentUpon>dialogCTHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\dialogNVGiayChungNhan.resx">
+      <DependentUpon>dialogNVGiayChungNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dialog\dialogNVKhachHang.resx">
       <DependentUpon>dialogNVKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLChuyenDoi.resx">
+      <DependentUpon>frmQLChuyenDoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQLNhanVienTab.resx">
       <DependentUpon>frmQLNhanVienTab.cs</DependentUpon>

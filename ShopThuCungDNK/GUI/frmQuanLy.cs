@@ -126,5 +126,27 @@ namespace ShopThuCungDNK.GUI
 
             frmQLLoaiThuCung.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmQLChuyenDoi frmQLLoaiThuCung = new frmQLChuyenDoi();
+            frmQLLoaiThuCung.TopLevel = false;
+
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.Clear();
+            }
+
+            // Đặt kích thước của frmNVTrangChu bằng kích thước của panelDesktop
+            frmQLLoaiThuCung.Size = panelMain.ClientSize;
+
+
+            panelMain.Controls.Add(frmQLLoaiThuCung);
+
+            // Đảm bảo frmNVTrangChu hiển thị lên trên cùng
+            frmQLLoaiThuCung.BringToFront();
+
+            frmQLLoaiThuCung.Show();
+        }
     }
 }
