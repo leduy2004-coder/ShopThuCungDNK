@@ -26,13 +26,14 @@ namespace ShopThuCungDNK.GUI
         private void btn_DiemDanh_Click(object sender, EventArgs e)
         {
             // Lấy ngày hiện tại
+
             DateTime ngayHienTai = DateTime.Today; // Lấy ngày hiện tại, bỏ phần giờ
-
-
             // Kiểm tra xem nhân viên đã điểm danh hôm nay chưa
             DataTable dtDiemDanh = Fml.HienThi("DiemDanh.xml");
-            string filter = $"maNV = '{maNV}' AND ngayDiemDanh LIKE '{ngayHienTai}%'";
-            DataRow[] rows = dtDiemDanh.Select($"maNV = '{maNV}' AND ngayDiemDanh >= #{ngayHienTai:yyyy-MM-dd}# AND ngayDiemDanh < #{ngayHienTai.AddDays(1):yyyy-MM-dd}#");
+            int maNVInt = int.Parse(maNV); 
+            DataRow[] rows = dtDiemDanh.Select(
+         $"maNV = {maNVInt} AND ngayDiemDanh >= #{ngayHienTai}#"
+     );
 
 
             if (rows.Length > 0)
