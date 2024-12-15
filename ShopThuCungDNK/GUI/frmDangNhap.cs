@@ -36,27 +36,12 @@ namespace ShopThuCungDNK.GUI
                 {
                     MessageBox.Show("Đăng nhập thành công");
 
-                    // Lấy MaRole từ DataRow
-                    int maQuyen = Convert.ToInt32(user["maRole"]); 
-
-                    // Gọi phương thức lấy quyền của người dùng
-                    String code = dn.layMaQuyen(maQuyen);
-
-                    // Lưu tên người dùng và chuyển tới form chính
-                    
-                    if (code.Equals("EMPLOYEE")) {
-                        frmNhanVien.tenDNMain = user["tenNV"].ToString();
-                        frmNhanVien.maNVMain = user["maNV"].ToString();
-                        frmNhanVien frm = new frmNhanVien(); 
-                        frm.Show();
-                    }
-                    else
-                    {
-                        frmQuanLy.tenDNMain = user["tenNV"].ToString();
+                        frmQuanLy.tenDNMain = user["tenNV"].ToString(); 
                         frmQuanLy.maNVMain = user["maNV"].ToString();
+                        frmQuanLy.role = user["maRole"].ToString();
                         frmQuanLy frm = new frmQuanLy();
                         frm.Show();
-                    }
+                    
 
                     this.Hide();
                 }
