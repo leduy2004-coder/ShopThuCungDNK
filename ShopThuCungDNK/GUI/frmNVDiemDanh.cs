@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ShopThuCungDNK.GUI
 {
-    public partial class frmNVTrangChu : Form
+    public partial class frmNVDiemDanh : Form
     {
         FileXml Fml = new FileXml();
         DiemDanh diemDanh = new DiemDanh();
         public static string maNV = "";
 
-        public frmNVTrangChu()
+        public frmNVDiemDanh()
         {
             InitializeComponent();
         }
