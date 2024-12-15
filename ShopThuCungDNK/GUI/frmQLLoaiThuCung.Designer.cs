@@ -315,7 +315,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(877, 296);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 39);
+            this.button1.Size = new System.Drawing.Size(126, 39);
             this.button1.TabIndex = 182;
             this.button1.Text = "Làm lại";
             this.button1.UseVisualStyleBackColor = false;

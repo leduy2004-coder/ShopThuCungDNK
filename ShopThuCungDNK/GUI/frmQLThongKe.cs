@@ -258,5 +258,9 @@ namespace ShopThuCungDNK.GUI
             dataGridView1.Columns["TongTien"].HeaderText = "Tổng Tiền";
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

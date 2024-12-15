@@ -127,7 +127,8 @@ namespace ShopThuCungDNK.GUI
             frmQLLoaiThuCung.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             frmQLChuyenDoi frmQLLoaiThuCung = new frmQLChuyenDoi();
             frmQLLoaiThuCung.TopLevel = false;
@@ -149,7 +150,7 @@ namespace ShopThuCungDNK.GUI
             frmQLLoaiThuCung.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             frmQLThongKe frmQLThongKe = new frmQLThongKe();
             frmQLThongKe.TopLevel = false;
