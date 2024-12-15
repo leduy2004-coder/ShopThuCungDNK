@@ -1,0 +1,123 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Đặt font chữ hiện đại */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding: 40px;
+    line-height: 1.6;
+}
+/* Container chính */
+.profile-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e4e8f0;
+}
+/* Tiêu đề */
+h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* Bảng dữ liệu */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e4e8f0;
+}
+/* Dòng trong bảng khi hover */
+tr:hover {
+    background-color: #eef2f7;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+/* Thông tin hồ sơ */
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+    .profile-info div {
+        background-color: #f7f8fa;
+        padding: 20px;
+        width: 48%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e4e8f0;
+    }
+        /* Cải tiến label và span */
+        .profile-info div label {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+        .profile-info div span {
+            color: #333;
+            font-size: 14px;
+            display: block;
+            margin-top: 8px;
+        }
+
+            .profile-info div span a {
+                color: #007bff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .profile-info div span a:hover {
+                    color: #0056b3;
+                    text-decoration: underline;
+                }
+/* Media Queries - Responsive cho di động */
+@media screen and (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .profile-info div {
+        width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+}

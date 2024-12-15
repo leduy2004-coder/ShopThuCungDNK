@@ -199,5 +199,12 @@ namespace ShopThuCungDNK.GUI
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            int i = dgvGiayChungNhan.CurrentRow.Index;
+            string data = dgvGiayChungNhan.Rows[i].Cells[0].Value.ToString();
+            Fxml.TimKiemXSLT(data, "GiayChungNhan", "GiayChungNhan");
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace ShopThuCungDNK.GUI
                 int maDiemDanh = Fml.LayMaxValueFromXml("DiemDanh.xml", "maDiemDanh");
 
                 // Gọi hàm thêm điểm danh
-                diemDanh.ThemDiemDanh(maDiemDanh.ToString(), maNV, DateTime.Now);
+                diemDanh.ThemDiemDanh(maDiemDanh.ToString(), maNV, ngayHienTai);
 
                 MessageBox.Show("Điểm danh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

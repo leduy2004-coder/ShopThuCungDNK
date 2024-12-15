@@ -165,6 +165,8 @@ namespace ShopThuCungDNK.GUI
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!kiemTraUpAnh)
+                hinhAnh = Convert.ToBase64String(imageBytes);
             if (KiemTraDuLieu())
             {
                 // Lấy các dữ liệu từ các ô nhập liệu
@@ -193,8 +195,7 @@ namespace ShopThuCungDNK.GUI
                 // Kiểm tra nếu có mã thú cưng (maThuCung), thực hiện cập nhật (sửa), còn không có thì thêm mới
                 if (maThuCung != 0)
                 {
-                    if (!kiemTraUpAnh)
-                        hinhAnh = Convert.ToBase64String(imageBytes);
+                    
                     // Cập nhật thú cưng
                     ThuCung.suaThuCung(maThuCung.ToString(), tuoi, giong, giaTC, soLuong, maLoai, maNhaCungCap, maTinhTrang, hinhAnh);
                 }

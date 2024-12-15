@@ -42,6 +42,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.PictureBox();
             this.btnRemove = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiayChungNhan)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).BeginInit();
@@ -108,7 +110,7 @@
             this.dgvGiayChungNhan.RowTemplate.DividerHeight = 1;
             this.dgvGiayChungNhan.RowTemplate.Height = 25;
             this.dgvGiayChungNhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGiayChungNhan.Size = new System.Drawing.Size(904, 545);
+            this.dgvGiayChungNhan.Size = new System.Drawing.Size(1105, 545);
             this.dgvGiayChungNhan.TabIndex = 0;
             // 
             // maGiayChungNhan
@@ -179,7 +181,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 53);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(8, 0, 8, 15);
-            this.panel5.Size = new System.Drawing.Size(920, 560);
+            this.panel5.Size = new System.Drawing.Size(1121, 560);
             this.panel5.TabIndex = 6;
             // 
             // label2
@@ -197,21 +199,35 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.btnUpdate);
             this.panel4.Controls.Add(this.btnRemove);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(733, 0);
+            this.panel4.Location = new System.Drawing.Point(864, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(187, 53);
+            this.panel4.Size = new System.Drawing.Size(257, 53);
             this.panel4.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(47, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Size = new System.Drawing.Size(54, 53);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(31, 0);
+            this.btnAdd.Location = new System.Drawing.Point(101, 0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(10);
             this.btnAdd.Size = new System.Drawing.Size(52, 53);
@@ -225,7 +241,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(83, 0);
+            this.btnUpdate.Location = new System.Drawing.Point(153, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Padding = new System.Windows.Forms.Padding(10);
             this.btnUpdate.Size = new System.Drawing.Size(52, 53);
@@ -239,7 +255,7 @@
             this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemove.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
-            this.btnRemove.Location = new System.Drawing.Point(135, 0);
+            this.btnRemove.Location = new System.Drawing.Point(205, 0);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Padding = new System.Windows.Forms.Padding(10);
             this.btnRemove.Size = new System.Drawing.Size(52, 53);
@@ -277,7 +293,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(337, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(583, 53);
+            this.panel3.Size = new System.Drawing.Size(784, 53);
             this.panel3.TabIndex = 2;
             // 
             // panel1
@@ -288,7 +304,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 53);
+            this.panel1.Size = new System.Drawing.Size(1121, 53);
             this.panel1.TabIndex = 5;
             // 
             // panel2
@@ -305,7 +321,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(920, 613);
+            this.ClientSize = new System.Drawing.Size(1121, 613);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
@@ -317,6 +333,7 @@
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).EndInit();
@@ -350,5 +367,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayHetHan;
         private System.Windows.Forms.DataGridViewTextBoxColumn nguoiCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn chiTiet;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

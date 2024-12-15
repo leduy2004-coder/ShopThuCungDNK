@@ -112,6 +112,13 @@ namespace ShopThuCungDNK.GUI
             txtTimKiem.Text = "";
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            int i = dataGridView1.CurrentRow.Index;
+            string data = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            Fxml.TimKiemXSLT(data, "NguoiDung", "NguoiDung");
+        }
+
         // Load dữ liệu từ các trường nhập liệu vào đối tượng NguoiDung
         public void LoadDuLieu()
         {
