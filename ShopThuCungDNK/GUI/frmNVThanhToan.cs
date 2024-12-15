@@ -269,8 +269,7 @@ namespace ShopThuCungDNK.GUI
 
             string trangThai = "true";
             string tongTien = lbTotalMoney.Text;
-            string ngayTao = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-
+            string ngayTao = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
             // Gọi phương thức thêm hóa đơn
             HoaDon.themHoaDon(maKHang, maNVMain, trangThai, ngayTao, tongTien);
             ThemCTHoaDon();
