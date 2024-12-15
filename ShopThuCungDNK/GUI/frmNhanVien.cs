@@ -43,6 +43,7 @@ namespace ShopThuCungDNK.GUI
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             ThongTinDangNhap();
+            btnHome_Click_1(sender, e);
         }
 
         //trang chủ
