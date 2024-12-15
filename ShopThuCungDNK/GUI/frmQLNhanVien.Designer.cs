@@ -59,6 +59,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -130,7 +131,7 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button6.Location = new System.Drawing.Point(945, 194);
+            this.button6.Location = new System.Drawing.Point(946, 180);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(91, 39);
             this.button6.TabIndex = 170;
@@ -144,7 +145,7 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Location = new System.Drawing.Point(945, 109);
+            this.button5.Location = new System.Drawing.Point(946, 95);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(91, 39);
             this.button5.TabIndex = 169;
@@ -158,7 +159,7 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(945, 29);
+            this.button4.Location = new System.Drawing.Point(946, 15);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 39);
             this.button4.TabIndex = 168;
@@ -388,6 +389,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label7);
@@ -414,6 +416,20 @@
             this.groupBox1.TabIndex = 181;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản lí nhân viên";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(946, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 39);
+            this.button1.TabIndex = 181;
+            this.button1.Text = "Làm lại";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmQLNhanVien
             // 
@@ -469,5 +485,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

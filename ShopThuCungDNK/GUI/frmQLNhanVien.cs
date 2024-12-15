@@ -97,6 +97,20 @@ namespace ShopThuCungDNK.GUI
             txtTimKiem.Focus();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+        private void reset()
+        {
+            textBox6.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            txtTimKiem.Text = "";
+        }
 
         // Load dữ liệu từ các trường nhập liệu vào đối tượng NguoiDung
         public void LoadDuLieu()
@@ -125,9 +139,9 @@ namespace ShopThuCungDNK.GUI
             }
 
             nv.ThemNguoiDung(MaNhanVien, TenNhanVien, Sdt, DiaChi, tk, mk);
-            MessageBox.Show("Ok");
+            MessageBox.Show("Thêm thành công");
             hienthiNhanVien();
-            textBox6.Focus();
+            reset();
 
         }
 
@@ -144,7 +158,7 @@ namespace ShopThuCungDNK.GUI
             {
                 MessageBox.Show("Vui lòng chọn một dòng để sửa.");
             }
-           
+            reset();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -173,7 +187,7 @@ namespace ShopThuCungDNK.GUI
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.");
             }
-            
+            reset();
         }
     }
 }

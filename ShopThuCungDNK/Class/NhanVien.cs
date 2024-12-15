@@ -50,13 +50,13 @@ namespace ShopThuCungDNK.Class
                 "<mk>" + mk + "</mk>" +
                 "<maRole>" + 2 + "</maRole>";
 
-            Fxml.Sua("NguoiDung.xml", "NguoiDung", "maNV", maNV.ToString(), noiDung);
+            Fxml.Sua("NguoiDung.xml", "NguoiDung", "maNV", maNV, noiDung);
         }
 
         // Xóa nhân viên
         public void XoaNguoiDung(string maNV)
         {
-            Fxml.Xoa("NguoiDung.xml", "NguoiDung", "maNV", maNV.ToString());
+            Fxml.Xoa("NguoiDung.xml", "NguoiDung", "maNV", maNV);
         }
     }
 }

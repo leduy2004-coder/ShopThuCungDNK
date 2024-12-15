@@ -74,48 +74,85 @@ namespace QuanLySieuThi.Class
         {
             string duongDan = @"" + tenBang + ".xml";
             DataTable table = Fxml.HienThi(duongDan);
-            for (int i = 0; i < table.Rows.Count; i++)
+
+            try
             {
-                string sql = "insert into " + tenBang + " values(";
-                for (int j = 0; j < table.Columns.Count - 1; j++)
+                // Bật IDENTITY_INSERT
+                string sql = $"SET IDENTITY_INSERT {tenBang} ON;";
+                Fxml.InsertOrUpDateSQL(sql);
+
+                // Lặp qua các dòng và chèn vào bảng
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    sql += "N'" + table.Rows[i][j].ToString().Trim() + "',";
+                    sql = $"INSERT INTO {tenBang} (";
+
+                    // Lặp qua các cột và thêm vào câu lệnh INSERT
+                    for (int j = 0; j < table.Columns.Count; j++)
+                    {
+                        sql += table.Columns[j].ColumnName + ", ";
+                    }
+
+                    // Xóa dấu ',' thừa cuối câu lệnh
+                    sql = sql.TrimEnd(',', ' ') + ") VALUES(";
+
+                    // Thêm giá trị từ DataTable vào câu lệnh VALUES
+                    for (int j = 0; j < table.Columns.Count; j++)
+                    {
+                        // Kiểm tra giá trị có thể bị null hay không
+                        var value = table.Rows[i][j].ToString().Trim();
+                        sql += value == string.Empty ? "NULL," : $"N'{value}',";
+                    }
+
+                    // Xóa dấu ',' thừa cuối câu lệnh VALUES
+                    sql = sql.TrimEnd(',') + ");";
+
+                    // Thực thi câu lệnh INSERT
+                    Fxml.InsertOrUpDateSQL(sql);
                 }
-                sql += "N'" + table.Rows[i][table.Columns.Count - 1].ToString().Trim() + "'";
-                sql += ")";
-                //MessageBox.Show(sql);
+
+                // Tắt IDENTITY_INSERT
+                sql = $"SET IDENTITY_INSERT {tenBang} OFF;";
                 Fxml.InsertOrUpDateSQL(sql);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi chèn dữ liệu vào bảng {tenBang}: {ex.Message}");
+            }
         }
+
+
+
+
+
         public void CapNhapSQL()
         {
             //Xóa toàn bộ dữ liệu các bảng
+            Fxml.InsertOrUpDateSQL("delete from DiemDanh");
             Fxml.InsertOrUpDateSQL("delete from NguoiDung");
             Fxml.InsertOrUpDateSQL("delete from ChiTietHoaDon");
             Fxml.InsertOrUpDateSQL("delete from KhachHang");
             Fxml.InsertOrUpDateSQL("delete from HoaDon");
             Fxml.InsertOrUpDateSQL("delete from LoaiThuCung");
             Fxml.InsertOrUpDateSQL("delete from NhaCungCap");
-            Fxml.InsertOrUpDateSQL("delete from ThuCung");
             Fxml.InsertOrUpDateSQL("delete from TinhTrang");
+            Fxml.InsertOrUpDateSQL("delete from LoaiGiayChungNhan");
             Fxml.InsertOrUpDateSQL("delete from GiayChungNhan");
             Fxml.InsertOrUpDateSQL("delete from Role");
-            Fxml.InsertOrUpDateSQL("delete from DiemDanh");
-            Fxml.InsertOrUpDateSQL("delete from LoaiGiayChungNhan");
+            Fxml.InsertOrUpDateSQL("delete from ThuCung");
 
             //Cập nhập toàn bộ dữ liệu các bảng
-            CapNhapTungBang("NguoiDung");
-            CapNhapTungBang("ChiTietHoaDon");
-            CapNhapTungBang("KhachHang");
-            CapNhapTungBang("HoaDon");
-            CapNhapTungBang("LoaiThuCung");
-            CapNhapTungBang("NhaCungCap");
-            CapNhapTungBang("ThuCung");
-            CapNhapTungBang("TinhTrang");
-            CapNhapTungBang("GiayChungNhan");
             CapNhapTungBang("Role");
+            CapNhapTungBang("NguoiDung");
             CapNhapTungBang("DiemDanh");
+            CapNhapTungBang("NhaCungCap");
+            CapNhapTungBang("KhachHang");
+            CapNhapTungBang("LoaiThuCung");
+            CapNhapTungBang("TinhTrang");
+            CapNhapTungBang("ThuCung");
             CapNhapTungBang("LoaiGiayChungNhan");
+            CapNhapTungBang("GiayChungNhan");
+            CapNhapTungBang("HoaDon");
+            CapNhapTungBang("ChiTietHoaDon");
         }
     }
 }

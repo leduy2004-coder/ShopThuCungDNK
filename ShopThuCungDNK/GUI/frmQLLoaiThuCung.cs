@@ -59,7 +59,7 @@ namespace ShopThuCungDNK.GUI
                 MessageBox.Show("Mã đã tồn tại");
                 return;
             }
-            if (TenLoai == null)
+            if (TenLoai == "")
             {
                 MessageBox.Show("Vui lòng điền tên loại !!");
                 return;
@@ -67,7 +67,8 @@ namespace ShopThuCungDNK.GUI
             l.ThemLoai(MaLoai, TenLoai);
             MessageBox.Show("Thêm thành công");
             hienthiLoai();
-            textBox1.Focus();
+            textBox2.Focus();
+            reset();
 
         }
 
@@ -80,6 +81,7 @@ namespace ShopThuCungDNK.GUI
                 l.SuaLoai(MaLoai, TenLoai);
                 MessageBox.Show("Sửa thành công");
                 hienthiLoai();
+                reset();
             }
             else
             {
@@ -100,6 +102,7 @@ namespace ShopThuCungDNK.GUI
                     l.XoaLoai(MaLoai);
                     MessageBox.Show("Xóa thành công");
                     hienthiLoai();
+                    reset();
                 }
             }
             else
@@ -159,6 +162,16 @@ namespace ShopThuCungDNK.GUI
             txtTimKiem.Focus();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void reset()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            txtTimKiem.Text = "";
+        }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
