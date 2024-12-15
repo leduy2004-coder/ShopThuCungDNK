@@ -31,10 +31,10 @@ namespace ShopThuCungDNK.GUI
             // Lấy dữ liệu trước
             getData();
 
-            decimal tongTien = 1000000m; // Thay thế bằng giá trị thực tế bạn nhận được từ getData()
+          
 
             // Đảm bảo giá trị Maximum hợp lý cho progress bar
-            decimal maxLimit = 1000000m; // Chỉnh lại giới hạn nếu cần thiết
+            decimal maxLimit = 10000000m; // Chỉnh lại giới hạn nếu cần thiết
             circularProgressBar1.Maximum = (int)maxLimit;
 
             // Đảm bảo tongTien không vượt quá Maximum, và kiểu giá trị của Value phải hợp lệ.
